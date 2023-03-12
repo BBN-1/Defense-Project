@@ -1,8 +1,8 @@
-.login-form-container {
+.register-form-container {
     padding-top: 45px;
     background-color: #121212;
     margin: 0 auto;
-    width: 500px;
+    width: 70%;
     height: 550px;
     border: 1px solid #c9c9c9;
     border-radius: 13px;
@@ -10,8 +10,7 @@
         0 0 1px #f40137, 0 0 25px #f40137, inset 0 0 20px #f40137;
 }
 
-.login-cta-container {
-    
+.register-cta-container {
     height: 100px;
     display: flex;
     flex-wrap: wrap;
@@ -19,46 +18,46 @@
     padding-bottom: 77px;
 }
 
-.login-cta-title {
+.register-cta-title {
     letter-spacing: 1.5px;
     flex-basis: 100%;
     padding-bottom: 10px;
     text-align: center;
     font-size: 33px;
-    font-weight:700;
+    font-weight: 700;
     color: #c9c9c9;
     display: flex;
     justify-content: center;
-    /* align-self: flex-end; */
 }
 
-.login-cta-para {
+.register-cta-para {
     font-size: 18px;
     color: #c9c9c99f;
 }
 
-.login-form {
+.register-form {
     display: flex;
-    justify-content: center;
+    /* justify-content: center; */
     padding-top: 35px;
     gap: 10px;
     flex-wrap: wrap;
     gap: 20px;
 }
 
-.login-email-container,
-.login-password-container {
-    text-align: center;
+.input-upper-section,
+.input-lower-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
     flex-basis: 100%;
-    
 }
 
- .login-form input {
-
+.register-form input {
     font-size: larger;
-    color:#c9c9c9;
-    height: 35px;
-    line-height: 30px;
+    color: #c9c9c9;
+    height: 37px;
+    line-height: 37px;
     text-indent: 40px;
     background-color: transparent;
     width: 350px;
@@ -67,15 +66,14 @@
     background-color: transparent;
     box-shadow: 0 0 1px #c9c9c9, 0 0 5px #c9c9c9, 0 0 5px #f4013662,
         0 0 1px #f4013662, 0 0 10px #f4013662, inset 0 0 15px #f4013662;
-
 }
 
-::placeholder { 
+::placeholder {
     color: #c9c9c9;
-    opacity: 1; 
-  }
+    opacity: 1;
+}
 
-  .username-icon {
+.username-icon {
     position: absolute;
     color: #c9c9c9;
     font-size: 22px;
@@ -83,12 +81,12 @@
     padding-left: 10px;
 }
 
-
-
-.login-btn {
+.register-btn {
+    
+    margin: 0 auto;
     margin-top: 50px;
     line-height: 45px;
-    font-size:medium;
+    font-size: medium;
     font-weight: bold;
     height: 45px;
     padding: 0 40px 0 40px;
@@ -101,7 +99,7 @@
         0 0 1px #f4013662, 0 0 10px #f4013662, inset 0 0 15px #f4013662;
 }
 
-.login-btn:hover {
+.register-btn:hover {
     height: 45px;
     padding: 0 20px 0 20px;
     color: #f40137;
@@ -110,24 +108,21 @@
     transition: all 1.3s cubic-bezier(0.19, 1, 0.22, 1);
 }
 
-.login-notlogged-container {
+.register-notlogged-container {
     text-align: center;
-    padding-top: 120px;
+    padding-top: 110px;
     height: 100px;
     color: #c9c9c9;
 }
 
-.login-notlogged-container p a{
-  
+.register-notlogged-container p a {
     font-weight: 700;
     color: #c9c9c99f;
     text-decoration: none;
 }
 
-.login-notlogged-container p a:hover {
+.register-notlogged-container p a:hover {
     color: #f40137;
- 
+
     transition: all 1.3s cubic-bezier(0.19, 1, 0.22, 1);
 }
-
-

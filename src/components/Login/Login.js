@@ -1,4 +1,11 @@
 import styles from "./Login.module.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faAt,  faLock, faUnlockKeyhole, faUser } from "@fortawesome/free-solid-svg-icons";
+
+
+const emailIcon = <FontAwesomeIcon icon={faAt} />;
+const passwordIcon = <FontAwesomeIcon icon={faLock} />;
+
 
 const Login = () => {
     return (
@@ -12,6 +19,7 @@ const Login = () => {
 
             <form className={styles["login-form"]}>
                 <div className={styles["login-email-container"]}>
+                <i className={styles["username-icon"]} >{emailIcon}</i>
                     <input  
                         type="email"
                         id="email"
@@ -22,6 +30,7 @@ const Login = () => {
                 </div>
 
                 <div className={styles["login-password-container"]}>
+                <i className={styles["username-icon"]} >{passwordIcon}</i>
                     <input 
                         type="password"
                         id="form2Example2"
@@ -31,7 +40,7 @@ const Login = () => {
                     />
                 </div>
 
-                <button type="submit" className={styles["login-login-btn"]}>
+                <button type="submit" className={styles["login-btn"]}>
                     LOGIN
                 </button>
             </form>

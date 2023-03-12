@@ -12,7 +12,7 @@
     text-align: center;
     margin: 0 auto;
     border: 1px solid #c9c9c9;
-    border-radius: 55px;
+    border-radius: 13px;
     box-shadow: 0 0 1px #c9c9c9, 0 0 5px #c9c9c9, 0 0 5px #f40137,
         0 0 1px #f40137, 0 0 25px #f40137, inset 0 0 20px #f40137;
 }
@@ -58,7 +58,7 @@
     color: #c9c9c9;
     cursor: pointer;
     border: 1px solid #c9c9c9;
-    border-radius: 55px;
+    border-radius: 7px;
     background-color: transparent;
     box-shadow: 0 0 1px #c9c9c9, 0 0 5px #c9c9c9, 0 0 5px #f4013662,
         0 0 1px #f4013662, 0 0 10px #f4013662, inset 0 0 15px #f4013662;
