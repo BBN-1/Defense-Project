@@ -3,10 +3,10 @@ import main_logo_transparent from "../../images/main_logo_transparent.png"
 
 const Header = () => {
     return (
-        <header className={styles.header_box}>
-            <nav className={styles.main_nav}>
-                <div className={styles.logo_box}>
-                    <li className={styles.logo_link}>
+        <header className={styles["header-box"]}>
+            <nav className={styles["main-nav"]}>
+                <div className={styles["logo-box"]}>
+                    <li className={styles["logo-link"]}>
                     <img
                             src={main_logo_transparent}
                             alt="main logo"
@@ -15,9 +15,9 @@ const Header = () => {
                    
                     
                 </div>
-                <ol role="list" className={styles.main_links_box}>
+                <ol role="list" className={styles["main-links-box"]}>
                     <li>MOTIVATE</li>
-                    <li>GET <span className={styles.red_exclamation_point}>MOTIVATED!</span></li>
+                    <li>GET <span className={styles["red-exclamation-point"]}>MOTIVATED!</span></li>
                     <li>LOGOUT</li>
                     <li>LOGIN</li>
                     <li>PROFILE</li>

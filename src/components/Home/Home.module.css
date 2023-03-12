@@ -1,25 +1,23 @@
-.home_container {
+.home-container {
     height: 600px;
     margin-top: 10px;
     background-color: #121212;
 }
 
-.quote_container {
+.quote-container {
     width: 70%;
     display: flex;
     flex-wrap: wrap;
     height: 550px;
     text-align: center;
     margin: 0 auto;
-    padding-bottom: 0px;
-    padding-top: 0px;
     border: 1px solid #c9c9c9;
     border-radius: 55px;
     box-shadow: 0 0 1px #c9c9c9, 0 0 5px #c9c9c9, 0 0 5px #f40137,
         0 0 1px #f40137, 0 0 25px #f40137, inset 0 0 20px #f40137;
 }
 
-.text_container {
+.text-container {
     margin: 0 auto;
     padding-left: 10%;
     padding-right: 10%;
@@ -30,17 +28,17 @@
     font-size: x-large;
 }
 
-.quote_text {
+.quote-text {
     padding-bottom: 50px;
     text-shadow: 1px 4px 0px rgba(18, 18, 18, 0.34);
 }
 
-.quote_author {
+.quote-author {
     color: #c9c9c9;
     text-shadow: 1px 4px 0px rgba(244, 1, 55, 0.34);
 }
 
-.home_buttons_container {
+.home-buttons-container {
     margin: 0 auto;
     display: flex;
     justify-content: center;
@@ -48,7 +46,7 @@
     gap: 30px;
 }
 
-.home_buttons_container button {
+.home-buttons-container button {
     line-height: 22px;
     text-decoration: none;
     color: #c9c9c9;
@@ -66,7 +64,7 @@
         0 0 1px #f4013662, 0 0 10px #f4013662, inset 0 0 15px #f4013662;
 }
 
-.home_buttons_container button:hover {
+.home-buttons-container button:hover {
     height: 45px;
     padding: 0 20px 0 20px;
     color: #f40137;
