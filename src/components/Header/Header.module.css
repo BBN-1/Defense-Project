@@ -1,0 +1,54 @@
+.header_box {
+    padding-top: 5px;
+    padding-bottom: 60px;
+    
+}
+
+.logo_link {
+    cursor: pointer;
+    height: 100px;
+    list-style: none;
+}
+
+.logo_box li img {
+    height: 100%;
+}
+
+.main_nav {
+    display: flex;
+    justify-content: space-between;
+}
+
+.main_links_box li {
+    padding-left: 15px;
+    padding-right: 15px;
+   color: #C9C9C9;
+   letter-spacing: 1.2px;
+   font-weight: bold;
+   cursor: pointer;
+
+}
+
+.main_links_box li:hover {
+    
+    color: #121212;
+    background-color: #C9C9C9;
+ 
+    border-radius: 8px;
+    transition: all 1.3s cubic-bezier(0.19, 1, 0.22, 1);
+    
+ 
+ }
+
+
+
+
+.main_links_box {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+
+.red_exclamation_point {
+    color: #F40137;
+}
