@@ -1,6 +1,6 @@
 import styles from "./Register.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faAt, faClock, faLock, faMailBulk, faMailForward, faShuffle, faUnlockKeyhole, faUser } from "@fortawesome/free-solid-svg-icons";
+import { faAt,  faLock, faUnlockKeyhole, faUser } from "@fortawesome/free-solid-svg-icons";
 
 const userIcon = <FontAwesomeIcon icon={faUser} />;
 const emailIcon = <FontAwesomeIcon icon={faAt} />;

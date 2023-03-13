@@ -1,0 +1,70 @@
+.profile-form-container {
+    padding-top: 45px;
+    padding-left: 30px;
+    padding-right: 30px;
+    background-color: #121212;
+    margin: 0 auto;
+    width: 500px;
+    height: 550px;
+    border: 1px solid #c9c9c9;
+    border-radius: 13px;
+    box-shadow: 0 0 1px #c9c9c9, 0 0 5px #c9c9c9, 0 0 5px #f40137,
+        0 0 1px #f40137, 0 0 25px #f40137, inset 0 0 20px #f40137;
+}
+
+.profile-header {
+    height: 150px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-bottom: 50px;
+}
+
+.profile-title {
+    letter-spacing: 1.5px;
+    flex-basis: 100%;
+    padding-bottom: 10px;
+    text-align: center;
+    font-size: 33px;
+    font-weight: 700;
+    color: #c9c9c9;
+    display: flex;
+    justify-content: center;
+    
+}
+
+.profile-para {
+    font-size: 18px;
+    color: #c9c9c99f;
+}
+
+.profile-card {
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    color: #c9c9c9;
+}
+
+.profile-card-username,
+.profile-card-email {
+    line-height: normal;
+}
+
+.profile-card-email {
+    line-height: 33px;
+}
+.profile-card-username-container,
+.profile-card-email-container {
+    display: flex;
+    gap: 10px;
+    flex-basis: 100%;
+    align-self: center;
+    justify-content: center;
+}
+
+.username-icon,
+.email-icon {
+    color: #f40137;
+    font-size: 22px;
+}
