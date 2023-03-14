@@ -19,6 +19,7 @@
 }
 
 .main-links-box li {
+    border: 1px solid transparent;
     padding-left: 15px;
     padding-right: 15px;
     color: #c9c9c9;
@@ -28,10 +29,11 @@
 }
 
 .main-links-box li:hover {
-    color: #121212;
-    background-color: #c9c9c9;
-
-    border-radius: 8px;
+    border: 1px solid #c9c9c9;
+    border-radius: 7px;
+    background-color: transparent;
+    box-shadow: 0 0 1px #c9c9c9, 0 0 5px #c9c9c9, 0 0 5px #f4013662,
+        0 0 1px #f4013662, 0 0 10px #f4013662, inset 0 0 15px #f4013662;
     transition: all 1.3s cubic-bezier(0.19, 1, 0.22, 1);
 }
 
