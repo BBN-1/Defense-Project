@@ -10,6 +10,8 @@ import Create from "./components/Create/Create";
 import Edit from "./components/Edit/Edit";
 import LatestQuote from "./components/Home/LatestQuote/LatestQuote";
 import Details from "./components/Details/Details";
+import NotFound from "./components/404/NotFound";
+
 
 function App() {
     return (
@@ -26,8 +28,11 @@ function App() {
                 <Route path="/Profile" element={<Profile />} />
                 <Route path="/register" element={<Register />} />
                 <Route path="/login" element={<Login />} />
+                <Route path="*" element={<NotFound />}/>
              
             </Routes>
+
+           
           
      
         </div>

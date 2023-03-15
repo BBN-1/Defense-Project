@@ -1,4 +1,5 @@
 import styles from "./Login.module.css";
+import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAt,  faLock, faUnlockKeyhole, faUser } from "@fortawesome/free-solid-svg-icons";
 
@@ -47,7 +48,7 @@ const Login = () => {
 
             <div className={styles["login-notlogged-container"]}>
                 <p>
-                    Don't have an account? <a href="#!">Register</a>
+                    Don't have an account? <Link to="/register" >Register</Link>
                 </p>
             </div>
         </section>

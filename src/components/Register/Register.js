@@ -1,4 +1,5 @@
 import styles from "./Register.module.css";
+import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAt,  faLock, faUnlockKeyhole, faUser } from "@fortawesome/free-solid-svg-icons";
 
@@ -70,7 +71,7 @@ const Register = () => {
 
             <div className={styles["register-notlogged-container"]}>
                 <p>
-                    Already have account? <a href="#">Login here</a>
+                    Already have account? <Link to="/login">Login here</Link>
                 </p>
             </div>
         </section>

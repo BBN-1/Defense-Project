@@ -13,7 +13,9 @@ const Header = () => {
             <nav className={styles["main-nav"]}>
                 <div className={styles["logo-box"]}>
                     <li className={styles["logo-link"]}>
-                      <NavLink to="/"><img src={main_logo_transparent} alt="main logo" /></NavLink>
+                        <NavLink to="/">
+                            <img src={main_logo_transparent} alt="main logo" />
+                        </NavLink>
                     </li>
                 </div>
                 <ol role="list" className={styles["main-links-box"]}>
@@ -30,14 +32,16 @@ const Header = () => {
                             </span>
                         </NavLink>
                     </li>
-                    <li>
-                        <NavLink to="/logout" className={setHeaderLinks}>
-                            LOGOUT
-                        </NavLink>
-                    </li>
+
                     <li>
                         <NavLink to="/login" className={setHeaderLinks}>
                             LOGIN
+                        </NavLink>
+                    </li>
+
+                    <li>
+                        <NavLink to="/register" className={setHeaderLinks}>
+                            REGISTER
                         </NavLink>
                     </li>
                     <li>
@@ -46,8 +50,8 @@ const Header = () => {
                         </NavLink>
                     </li>
                     <li>
-                        <NavLink to="/register" className={setHeaderLinks}>
-                            REGISTER
+                        <NavLink to="/logout" className={setHeaderLinks}>
+                            LOGOUT
                         </NavLink>
                     </li>
                 </ol>

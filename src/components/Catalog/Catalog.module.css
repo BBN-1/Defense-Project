@@ -27,7 +27,7 @@
     flex-wrap: wrap;
     flex-grow: 1;
     color: #c9c9c9;
-    width: 420px;
+    width: 400px;
     height: 450px;
     padding-top: 20px;
     padding-bottom: 50px;
@@ -43,10 +43,11 @@
 }
 
 .quote-card:hover {
-    
+    background-color: #c9c9c9;
+    color: #121212;
     box-shadow: 0 0 1px #c9c9c9, 0 0 5px #c9c9c9, 0 0 5px #d7e46177,
         0 0 1px #9bc54762, 0 0 10px #9cdb5562, inset 0 0 15px #88d64c62;
-    transition: all 1.3s cubic-bezier(0.19, 1, 0.22, 1);
+    transition: all 1.8s cubic-bezier(0.19, 1, 0.22, 1);
 }
 
 .quote-text,
@@ -73,7 +74,7 @@
     font-weight: bold;
     height: 45px;
     padding: 0 40px 0 40px;
-    color: #c9c9c9;
+    color: #f40137;
     cursor: pointer;
     border: 1px solid #c9c9c9;
     border-radius: 7px;
@@ -82,11 +83,14 @@
         0 0 1px #f4013662, 0 0 10px #f4013662, inset 0 0 15px #f4013662;
 }
 
-.quote-details-link:hover {
+ .quote-details-link:hover {
+    color: #121212;
     height: 45px;
     padding: 0 40px 0 40px;
+    
     color: #f40137;
-    box-shadow: 0 0 1px #c9c9c9, 0 0 5px #c9c9c9, 0 0 5px #f4013662,
-        0 0 1px #f4013662, 0 0 10px #f4013662, inset 0 0 15px #f4013662;
-    transition: all 1.3s cubic-bezier(0.19, 1, 0.22, 1);
-}
+    box-shadow: 0 0 1px #273b0f62, 0 0 5px #5a941862, 0 0 5px #d7e46177,
+    0 0 1px #5a941862, 0 0 10px #5a941862, inset 0 0 15px #27460462;
+    transition: all 1.8s cubic-bezier(0.19, 1, 0.22, 1);
+} 
+

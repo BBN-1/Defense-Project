@@ -18,6 +18,12 @@
     justify-content: space-between;
 }
 
+.main-links-box {
+    display: flex;
+    gap: 1px;
+    align-items: center;
+}
+
 .main-links-box li {
     border: 1px solid transparent;
     color: #c9c9c9;
@@ -38,11 +44,6 @@
     transition: all 1.3s cubic-bezier(0.19, 1, 0.22, 1);
 }
 
-.main-links-box {
-    display: flex;
-    gap: 5px;
-    align-items: center;
-}
 
 .red-exclamation-point {
     color: #f40137;
@@ -50,8 +51,8 @@
 
 .active-link {
     border: 1px solid transparent;
-    padding-left: 15px;
-    padding-right: 15px;
+    padding-left: 10px;
+    padding-right: 10px;
     color: #f40137;
     letter-spacing: 1.2px;
     font-weight: bold;
@@ -63,8 +64,8 @@
 
 .non-active-link {
     border: 1px solid transparent;
-    padding-left: 15px;
-    padding-right: 15px;
+    padding-left: 10px;
+    padding-right: 10px;
     color: #c9c9c9;
     letter-spacing: 1.2px;
     font-weight: bold;

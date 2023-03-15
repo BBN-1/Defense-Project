@@ -1,4 +1,5 @@
 import styles from "./Catalog.module.css";
+import { Link } from "react-router-dom";
 
 const Catalog = () => {
     return (
@@ -15,19 +16,9 @@ const Catalog = () => {
                 </p>
                 <span className={styles["quote-author"]}>- Albert Einstein</span>
 
-                <a className={styles["quote-details-link"]} href="">
+                <Link className={styles["quote-details-link"]} to="/details">
                     Details
-                </a>
-            </div>
-
-            <div className={styles["quote-card"]}>
-                <p className={styles["quote-text"]}>
-                    “Two things are Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cum, repudiandae dolorem dolor animi maxime aspernatur nihil consequuntur omnis temporibus ipsam optio magni quidem quod voluptatem perspiciatis impedit, error laboriosam quasi?
-                </p>
-                <span className={styles["quote-author"]}>-Albert Einstein</span>
-                <a className={styles["quote-details-link"]} href="">
-                    Details
-                </a>
+                </Link>
             </div>
 
             <div className={styles["quote-card"]}>
@@ -38,10 +29,11 @@ const Catalog = () => {
                     about the universe.” “Two things are infinite: the universe
                     and human stupidity; and I'm not sure about the universe.”
                 </p>
-                <span className={styles["quote-author"]}>-Albert Einstein</span>
-                <a className={styles["quote-details-link"]} href="">
+                <span className={styles["quote-author"]}>- Albert Einstein</span>
+
+                <Link className={styles["quote-details-link"]} to="/details">
                     Details
-                </a>
+                </Link>
             </div>
 
             <div className={styles["quote-card"]}>
@@ -52,10 +44,11 @@ const Catalog = () => {
                     about the universe.” “Two things are infinite: the universe
                     and human stupidity; and I'm not sure about the universe.”
                 </p>
-                <span className={styles["quote-author"]}>-Albert Einstein</span>
-                <a className={styles["quote-details-link"]} href="">
+                <span className={styles["quote-author"]}>- Albert Einstein</span>
+
+                <Link className={styles["quote-details-link"]} to="/details">
                     Details
-                </a>
+                </Link>
             </div>
 
             <div className={styles["quote-card"]}>
@@ -66,10 +59,11 @@ const Catalog = () => {
                     about the universe.” “Two things are infinite: the universe
                     and human stupidity; and I'm not sure about the universe.”
                 </p>
-                <span className={styles["quote-author"]}>-Albert Einstein</span>
-                <a className={styles["quote-details-link"]} href="">
+                <span className={styles["quote-author"]}>- Albert Einstein</span>
+
+                <Link className={styles["quote-details-link"]} to="/details">
                     Details
-                </a>
+                </Link>
             </div>
 
             <div className={styles["quote-card"]}>
@@ -80,10 +74,11 @@ const Catalog = () => {
                     about the universe.” “Two things are infinite: the universe
                     and human stupidity; and I'm not sure about the universe.”
                 </p>
-                <span className={styles["quote-author"]}>-Albert Einstein</span>
-                <a className={styles["quote-details-link"]} href="">
+                <span className={styles["quote-author"]}>- Albert Einstein</span>
+
+                <Link className={styles["quote-details-link"]} to="/details">
                     Details
-                </a>
+                </Link>
             </div>
 
             <div className={styles["quote-card"]}>
@@ -94,11 +89,29 @@ const Catalog = () => {
                     about the universe.” “Two things are infinite: the universe
                     and human stupidity; and I'm not sure about the universe.”
                 </p>
-                <span className={styles["quote-author"]}>-Albert Einstein</span>
-                <a className={styles["quote-details-link"]} href="">
+                <span className={styles["quote-author"]}>- Albert Einstein</span>
+
+                <Link className={styles["quote-details-link"]} to="/details">
                     Details
-                </a>
+                </Link>
             </div>
+
+            <div className={styles["quote-card"]}>
+                <p className={styles["quote-text"]}>
+                    “Two things are infinite: the universe and human stupidity;
+                    and I'm not sure about the universe.” “Two things are
+                    infinite: the universe and human stupidity; and I'm not sure
+                    about the universe.” “Two things are infinite: the universe
+                    and human stupidity; and I'm not sure about the universe.”
+                </p>
+                <span className={styles["quote-author"]}>- Albert Einstein</span>
+
+                <Link className={styles["quote-details-link"]} to="/details">
+                   <span className={styles["catalog-details-link-txt"]}>Details</span> 
+                </Link>
+            </div>
+
+  
         </section>
         </div>
     );
