@@ -82,6 +82,7 @@
 
 .edit-form textarea:hover,
 .edit-form input:hover {
+    
     cursor: pointer;
     border: 1px solid #c9c9c9;
     border-radius: 7px;
@@ -124,9 +125,7 @@
 
 .edit-btn:hover {
     height: 45px;
-
     color: #9bc54762;
-
     box-shadow: 0 0 1px #c9c9c9, 0 0 5px #c9c9c9, 0 0 5px #d7e46177,
         0 0 1px #9bc54762, 0 0 10px #9cdb5562, inset 0 0 15px #88d64c62;
     transition: all 1.3s cubic-bezier(0.19, 1, 0.22, 1);
