@@ -1,4 +1,5 @@
 import styles from "./Home.module.css";
+import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faClock, faShuffle } from "@fortawesome/free-solid-svg-icons";
 
@@ -24,14 +25,15 @@ const Home = () => {
                 </div>
 
                 <div className={styles["home-buttons-container"]}>
-                    <button>
+                    <Link>
                         <i className={styles.icon}>{shuffle}</i>
                         Random
-                    </button>
-                    <button>
+                    </Link>
+
+                    <Link to="/catalog">
                         <i className={styles.icon}>{clock}</i>
                         Show all!
-                    </button>
+                    </Link>
                 </div>
             </div>
         </section>

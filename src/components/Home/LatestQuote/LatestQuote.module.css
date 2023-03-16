@@ -1,3 +1,9 @@
+.home-container {
+    height: 600px;
+    margin-top: 10px;
+    background-color: #121212;
+}
+
 .quote-container {
     width: 70%;
     padding-bottom: 30px;
@@ -33,7 +39,9 @@
     text-shadow: 1px 4px 0px rgba(244, 1, 55, 0.34);
 }
 
-.latest-buttons-container {
+.home-buttons-container {
+   
+
     height: 100px;
     margin: 0 auto;
     display: flex;
@@ -43,8 +51,8 @@
     gap: 30px;
 }
 
-.latest-buttons-container button {
-    line-height: 22px;
+.home-buttons-container a {
+    line-height: 41px;
     text-decoration: none;
     color: #c9c9c9;
     font-size: x-large;
@@ -61,7 +69,7 @@
         0 0 1px #f4013662, 0 0 10px #f4013662, inset 0 0 15px #f4013662;
 }
 
-.latest-buttons-container button:hover {
+.home-buttons-container a:hover {
     height: 45px;
     padding: 0 20px 0 20px;
     color: #f40137;

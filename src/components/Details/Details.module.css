@@ -3,7 +3,8 @@
     padding-bottom: 30px;
     display: flex;
     flex-wrap: wrap;
-    height: 550px;
+    gap: 30px;
+    /* height: 550px; */
     text-align: center;
     margin: 0 auto;
     border: 1px solid #c9c9c9;
@@ -16,7 +17,7 @@
     margin: 0 auto;
     padding-left: 10%;
     padding-right: 10%;
-    
+
     padding-top: 5%;
     font-weight: bold;
     color: #c9c9c9;
@@ -43,6 +44,8 @@
     margin: 0 auto;
     display: flex;
     justify-content: center;
+    flex-basis: 100%;
+
     align-items: flex-end;
     align-self: flex-end;
     gap: 30px;
@@ -77,11 +80,152 @@
     transition: all 1.3s cubic-bezier(0.19, 1, 0.22, 1);
 }
 
-
-
 .icon {
     color: #f40137;
     line-height: 22px;
     font-size: x-large;
     padding-right: 7px;
+}
+
+.details-comment-form-container {
+    background-color: transparent;
+    height: 350px;
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin: 0 auto;
+    display: flex;
+    align-self: center;
+    flex-basis: 100%;
+}
+
+.comment-form {
+    padding: 20px 20px 20px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: space-around;
+    margin: 0 auto;
+    border: 1px solid #c9c9c9;
+    border-radius: 7px;
+    background-color: transparent;
+    box-shadow: 0 0 1px #c9c9c9, 0 0 5px #c9c9c9, 0 0 5px #f4013662,
+        0 0 1px #f4013662, 0 0 10px #f4013662, inset 0 0 15px #f4013662;
+}
+
+.comment-label,
+.comment-label,
+.comment-textarea {
+    flex-basis: 100%;
+}
+
+.comment-label {
+    color: #c9c9c9;
+}
+
+.comment-textarea {
+    align-self: flex-start;
+
+    height: 100px;
+    resize: none;
+    border-radius: 7px;
+    font-size: larger;
+    color: #c9c9c9;
+    line-height: 28px;
+    text-indent: 40px;
+    background-color: transparent;
+
+    border: 1px solid #c9c9c9;
+    border-radius: 7px;
+    background-color: transparent;
+    box-shadow: 0 0 1px #c9c9c9, 0 0 5px #c9c9c9, 0 0 5px #f4013662,
+        0 0 1px #f4013662, 0 0 10px #f4013662, inset 0 0 15px #f4013662;
+}
+
+.comment-textarea:hover {
+    background-color: transparent;
+    box-shadow: 0 0 1px #c9c9c9, 0 0 5px #c9c9c9, 0 0 5px #d7e46177,
+        0 0 1px #9bc54762, 0 0 10px #9cdb5562, inset 0 0 15px #88d64c62;
+    transition: all 1.3s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+::placeholder {
+    color: #c9c9c99f;
+}
+.comment-label {
+    font-size: large;
+    font-weight: bold;
+    height: 50px;
+}
+
+.comment-btn {
+    line-height: 22px;
+    text-decoration: none;
+    color: #c9c9c9;
+    font-size: large;
+    font-weight: bold;
+
+    height: 45px;
+    padding: 0 20px 0 20px;
+    color: #c9c9c9;
+    cursor: pointer;
+    border: 1px solid #c9c9c9;
+    border-radius: 7px;
+    background-color: transparent;
+    box-shadow: 0 0 1px #c9c9c9, 0 0 5px #c9c9c9, 0 0 5px #f4013662,
+        0 0 1px #f4013662, 0 0 10px #f4013662, inset 0 0 15px #f4013662;
+}
+
+.comment-btn:hover {
+    height: 45px;
+    padding: 0 20px 0 20px;
+    color: #f40137;
+    cursor: pointer;
+    background-color: transparent;
+    box-shadow: 0 0 1px #c9c9c9, 0 0 5px #c9c9c9, 0 0 5px #d7e46177,
+        0 0 1px #9bc54762, 0 0 10px #9cdb5562, inset 0 0 15px #88d64c62;
+    transition: all 1.3s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.details-comments-container {
+    background-color: transparent;
+    
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin: 0 auto;
+    display: flex;
+    flex-basis: 100%;
+    align-self: flex-end;
+}
+
+.details-comments-container-inside-wrapper {
+    padding: 20px 20px 20px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: space-around;
+
+    border: 1px solid #c9c9c9;
+    border-radius: 7px;
+    background-color: transparent;
+    box-shadow: 0 0 1px #c9c9c9, 0 0 5px #c9c9c9, 0 0 5px #f4013662,
+        0 0 1px #f4013662, 0 0 10px #f4013662, inset 0 0 15px #f4013662;
+}
+
+.details-comments-container-single-comment {
+    padding: 4px 0px 10px 0px;
+    border-radius: 7px;
+    background-color: #c9c9c9;
+    color: #121212;
+    flex-basis: 100%;
+    
+    
+}
+
+.comments-wrapper-title{
+    color: #c9c9c9;
+    font-size: large;
 }
