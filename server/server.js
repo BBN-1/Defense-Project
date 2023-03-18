@@ -1364,6 +1364,51 @@
         },
         comments: {
         
+        },
+
+        quotes: {
+            "ff436770-76c5-40e2-b231-77409897a61": {
+                "_ownerId": "35c62d76-8152-4626-8712-eeb96381bea8",
+                "text": "Reality doesn't impress me. I only believe in intoxication, in ecstasy, and when ordinary life shackles me, I escape, one way or another. No more walls.",
+                "author": "Anaïs Nin",
+                "_createdOn": 1617194128618,
+            },
+            "1840a313-225c-416a-817a-99558689f7c": {
+                "_ownerId": "35c62d76-8152-4626-8712-eeb96381bea8",
+              "text": "Hold fast to dreams,For if dreams dieLife is a broken-winged bird, That cannot fly.",
+              "author": "Langston Hughes",              
+                "_createdOn": 1617194210928,
+            },
+            "1840a313-225c-416a-817a-91258689f7c": {
+                "_ownerId": "35c62d76-8152-4626-8712-eeb96381bea8",
+                "text": "Courage is the most important of all the virtues because without courage, you can't practice any other virtue consistently.",
+              "author": "Maya Angelou",              
+                "_createdOn": 1617194210928,
+            },
+            "1840a313-225c-421a-817a-91258689f7c": {
+                "_ownerId": "35c62d76-8152-4626-8712-eeb96381bea8",
+                "text": "It isn't what you have or who you are or where you are or what you are doing that makes you happy or unhappy. It is what you think about it.",
+              "author": "Dale Carnegie",              
+                "_createdOn": 1617194210928,
+            },
+            "1120a313-225c-421a-817a-91258689f7c": {
+                "_ownerId": "35c62d76-8152-4626-8712-eeb96381bea8",
+                "text": "If you want to be happy, do not dwell in the past, do not worry about the future, focus on living fully in the present.",
+              "author": "Roy T. Benne",              
+                "_createdOn": 1617194210928,
+            },
+            "1120a313-225c-421a-817a-90058689f7c": {
+                "_ownerId": "35c62d76-8152-4626-8712-eeb96381bea8",
+                "text": "Never marry at all, Dorian. Men marry because they are tired, women, because they are curious: both are disappointed.",
+              "author": "Oscar Wilde",              
+                "_createdOn": 1617194210928,
+            },
+            "1120a313-225c-421a-817a-912586007c": {
+                "_ownerId": "35c62d76-8152-4626-8712-eeb96381bea8",
+                "text": "Unfortunately, the clock is ticking, the hours are going by. The past increases, the future recedes. Possibilities decreasing, regrets mounting.",
+              "author": "Haruki Murakami",              
+                "_createdOn": 1617194210928,
+            }
         }
     };
     var rules$1 = {

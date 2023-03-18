@@ -47,7 +47,7 @@ const Register = () => {
                     <i className={styles["username-icon"]} >{passwordIcon}</i>
                         <input
                             type="password"
-                            id="form2Example2"
+                            id="password"
                             placeholder="Password"
                             name="password"
                         />
@@ -57,9 +57,9 @@ const Register = () => {
                     <i className={styles["username-icon"]} >{confirmPassIcon}</i>
                         <input
                             type="password"
-                            id="form2Example2"
+                            id="passconfirm"
                             placeholder="Repeat your password"
-                            name="confirm-password"
+                            name="passconfirm"
                         />
                     </div>
                 </section>

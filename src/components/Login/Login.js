@@ -10,7 +10,7 @@ const passwordIcon = <FontAwesomeIcon icon={faLock} />;
 const Login = () => {
     const [password, setPassword] = useState("");
     const [email, setEmail] = useState("");
-    const [errormsg, setErrorMsg] = useState();
+    
 
     const handlePassword = (e) => {
         setPassword(e.target.value);
@@ -22,7 +22,6 @@ const Login = () => {
 
     const onSubmit = (e) => {
         e.preventDefault();
-
 
         console.log(email + " " + password);
     };
@@ -64,13 +63,9 @@ const Login = () => {
                 <button type="submit" className={styles["login-btn"]}>
                     LOGIN
                 </button>
-
-               
             </form>
 
-            <div className={styles["login-notlogged-container"]}>
-              
-            </div>
+            <div className={styles["login-notlogged-container"]}></div>
         </section>
     );
 };

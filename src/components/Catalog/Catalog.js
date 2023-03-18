@@ -1,6 +1,8 @@
 import styles from "./Catalog.module.css";
 import { Link } from "react-router-dom";
 
+import * as gameService from '../../services/gameService'
+
 const Catalog = () => {
     return (
         <div className={styles["catalog-contianer"]}> 

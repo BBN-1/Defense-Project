@@ -1,65 +1,60 @@
-.home-container {
-    height: 600px;
-    margin-top: 10px;
-    background-color: #121212;
-}
-
-.quote-container {
-    width: 70%;
-    padding-bottom: 30px;
+.quote-card {
+    text-align: center;
     display: flex;
     flex-wrap: wrap;
-    height: 550px;
-    text-align: center;
-    margin: 0 auto;
-    border: 1px solid #c9c9c9;
-    border-radius: 13px;
-    box-shadow: 0 0 1px #c9c9c9, 0 0 5px #c9c9c9, 0 0 5px #f40137,
-        0 0 1px #f40137, 0 0 25px #f40137, inset 0 0 20px #f40137;
-}
-
-.text-container {
-    margin: 0 auto;
-    padding-left: 10%;
-    padding-right: 10%;
-    padding-top: 5%;
-    font-weight: bold;
+    
     color: #c9c9c9;
-    letter-spacing: 1px;
-    font-size: x-large;
+    width: 420px;
+    height: 450px;
+    padding-top: 20px;
+    padding-bottom: 50px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border: 1px solid #c9c9c9;
+    border-radius: 7px;
+    background-color: transparent;
+    box-shadow: 0 0 1px #c9c9c9, 0 0 5px #c9c9c9, 0 0 5px #f4013662,
+        0 0 1px #f4013662, 0 0 10px #f4013662, inset 0 0 15px #f4013662;
+
+    letter-spacing: 0.5px;
+    font-size: 18px;
 }
 
-.quote-text {
-    padding-bottom: 50px;
-    text-shadow: 1px 4px 0px rgba(18, 18, 18, 0.34);
+.quote-bottom-wrapper {
+    flex-basis: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    height: 200px;
+    align-self: flex-end;
+   
+
+}
+
+.quote-text,
+.quote-author {
+    flex-basis: 100%;
 }
 
 .quote-author {
-    color: #c9c9c9;
-    text-shadow: 1px 4px 0px rgba(244, 1, 55, 0.34);
+    height: 80px;
+    align-self: flex-start;
 }
 
-.home-buttons-container {
-   
-
-    height: 100px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    align-self: flex-end;
-    gap: 30px;
+.quote-text {
+    align-self: flex-start;
 }
 
-.home-buttons-container a {
-    line-height: 41px;
+.quote-details-link {
     text-decoration: none;
-    color: #c9c9c9;
-    font-size: x-large;
-    font-weight: bold;
 
+    align-self: flex-end;
+
+    margin: 0 auto;
+    line-height: 42px;
+    font-size: medium;
+    font-weight: bold;
     height: 45px;
-    padding: 0 20px 0 20px;
+    padding: 0 40px 0 40px;
     color: #c9c9c9;
     cursor: pointer;
     border: 1px solid #c9c9c9;
@@ -69,18 +64,11 @@
         0 0 1px #f4013662, 0 0 10px #f4013662, inset 0 0 15px #f4013662;
 }
 
-.home-buttons-container a:hover {
+.quote-details-link:hover {
     height: 45px;
     padding: 0 20px 0 20px;
     color: #f40137;
     box-shadow: 0 0 1px #c9c9c9, 0 0 5px #c9c9c9, 0 0 5px #f4013662,
         0 0 1px #f4013662, 0 0 10px #f4013662, inset 0 0 15px #f4013662;
     transition: all 1.3s cubic-bezier(0.19, 1, 0.22, 1);
-}
-
-.icon {
-    line-height: 22px;
-    font-size: x-large;
-    color: #c9c9c9;
-    padding-right: 7px;
 }
