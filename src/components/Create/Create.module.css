@@ -95,7 +95,8 @@
     opacity: 1;
 }
 
-.username-icon {
+.author-icon,
+.text-icon {
     position: absolute;
     color: #c9c9c9;
     font-size: 22px;

@@ -1,117 +1,29 @@
 import styles from "./Catalog.module.css";
-import { Link } from "react-router-dom";
+import CatalogItem from "./CatalogItem/CatalogItem";
 
 import * as gameService from '../../services/gameService'
+import { useEffect, useState } from "react";
 
 const Catalog = () => {
+
+    const [allQuotes, setAllQuotes] = useState([]);
+
+    useEffect(() => {
+        gameService.getAll().then( res => {
+            setAllQuotes(res);
+        })
+    },[])
+
+    console.log(allQuotes);
+
+
+
     return (
         <div className={styles["catalog-contianer"]}> 
-        <h1 className={styles["catalog-title"]}>MOTIVATIONS</h1>
+        <h1 className={styles["catalog-title"]}>All Motivations</h1>
         <section className={styles["catalog-cards-container"]}>
-            <div className={styles["quote-card"]}>
-                <p className={styles["quote-text"]}>
-                    “Two things are infinite: the universe and human stupidity;
-                    and I'm not sure about the universe.” “Two things are
-                    infinite: the universe and human stupidity; and I'm not sure
-                    about the universe.” “Two things are infinite: the universe
-                    and human stupidity; and I'm not sure about the universe.”
-                </p>
-                <span className={styles["quote-author"]}>- Albert Einstein</span>
-
-                <Link className={styles["quote-details-link"]} to="/details">
-                    Details
-                </Link>
-            </div>
-
-            <div className={styles["quote-card"]}>
-                <p className={styles["quote-text"]}>
-                    “Two things are infinite: the universe and human stupidity;
-                    and I'm not sure about the universe.” “Two things are
-                    infinite: the universe and human stupidity; and I'm not sure
-                    about the universe.” “Two things are infinite: the universe
-                    and human stupidity; and I'm not sure about the universe.”
-                </p>
-                <span className={styles["quote-author"]}>- Albert Einstein</span>
-
-                <Link className={styles["quote-details-link"]} to="/details">
-                    Details
-                </Link>
-            </div>
-
-            <div className={styles["quote-card"]}>
-                <p className={styles["quote-text"]}>
-                    “Two things are infinite: the universe and human stupidity;
-                    and I'm not sure about the universe.” “Two things are
-                    infinite: the universe and human stupidity; and I'm not sure
-                    about the universe.” “Two things are infinite: the universe
-                    and human stupidity; and I'm not sure about the universe.”
-                </p>
-                <span className={styles["quote-author"]}>- Albert Einstein</span>
-
-                <Link className={styles["quote-details-link"]} to="/details">
-                    Details
-                </Link>
-            </div>
-
-            <div className={styles["quote-card"]}>
-                <p className={styles["quote-text"]}>
-                    “Two things are infinite: the universe and human stupidity;
-                    and I'm not sure about the universe.” “Two things are
-                    infinite: the universe and human stupidity; and I'm not sure
-                    about the universe.” “Two things are infinite: the universe
-                    and human stupidity; and I'm not sure about the universe.”
-                </p>
-                <span className={styles["quote-author"]}>- Albert Einstein</span>
-
-                <Link className={styles["quote-details-link"]} to="/details">
-                    Details
-                </Link>
-            </div>
-
-            <div className={styles["quote-card"]}>
-                <p className={styles["quote-text"]}>
-                    “Two things are infinite: the universe and human stupidity;
-                    and I'm not sure about the universe.” “Two things are
-                    infinite: the universe and human stupidity; and I'm not sure
-                    about the universe.” “Two things are infinite: the universe
-                    and human stupidity; and I'm not sure about the universe.”
-                </p>
-                <span className={styles["quote-author"]}>- Albert Einstein</span>
-
-                <Link className={styles["quote-details-link"]} to="/details">
-                    Details
-                </Link>
-            </div>
-
-            <div className={styles["quote-card"]}>
-                <p className={styles["quote-text"]}>
-                    “Two things are infinite: the universe and human stupidity;
-                    and I'm not sure about the universe.” “Two things are
-                    infinite: the universe and human stupidity; and I'm not sure
-                    about the universe.” “Two things are infinite: the universe
-                    and human stupidity; and I'm not sure about the universe.”
-                </p>
-                <span className={styles["quote-author"]}>- Albert Einstein</span>
-
-                <Link className={styles["quote-details-link"]} to="/details">
-                    Details
-                </Link>
-            </div>
-
-            <div className={styles["quote-card"]}>
-                <p className={styles["quote-text"]}>
-                    “Two things are infinite: the universe and human stupidity;
-                    and I'm not sure about the universe.” “Two things are
-                    infinite: the universe and human stupidity; and I'm not sure
-                    about the universe.” “Two things are infinite: the universe
-                    and human stupidity; and I'm not sure about the universe.”
-                </p>
-                <span className={styles["quote-author"]}>- Albert Einstein</span>
-
-                <Link className={styles["quote-details-link"]} to="/details">
-                   <span className={styles["catalog-details-link-txt"]}>Details</span> 
-                </Link>
-            </div>
+        
+        {allQuotes.map(quote => <CatalogItem  key={quote._id} quote={quote} />)}
 
   
         </section>

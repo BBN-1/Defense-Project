@@ -2,23 +2,37 @@ import styles from "./Details.module.css";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPencil, faRadiation } from "@fortawesome/free-solid-svg-icons";
+import { useParams } from "react-router-dom";
+import * as gameService from '../../services/gameService'
+import { useEffect, useState } from "react";
 
 const pencil = <FontAwesomeIcon icon={faPencil} />;
 const danger = <FontAwesomeIcon icon={faRadiation} />;
 
 const Details = () => {
+
+    const [quote, setQuote] = useState({}); 
+    const {quoteId} = useParams();
+
+    console.log(quoteId);
+
+    useEffect(() => {
+        gameService.getOne(quoteId).then(
+            res => setQuote(res)
+            
+        );
+    },[]);
+
+    
+
     return (
         <div className={styles["quote-container"]}>
             <div className={styles["text-container"]}>
                 <p className={styles["quote-text"]}>
-                    “Two things are infinite: the universe and human stupidity;
-                    and I'm not sure about the universe.” “Two things are
-                    infinite: the universe and human stupidity; and I'm not sure
-                    about the universe.” “Two things are infinite: the universe
-                    and human stupidity; and I'm not sure about the universe.”
-                    things are infinite: the universe and human stupidity;
+                    “{quote.text}”
+                    
                 </p>
-                <span className={styles["quote-author"]}>-Albert Einstein</span>
+                <span className={styles["quote-author"]}>-{quote.author}</span>
             </div>
 
             <div className={styles["details-buttons-container"]}>

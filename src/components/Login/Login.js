@@ -65,7 +65,11 @@ const Login = () => {
                 </button>
             </form>
 
-            <div className={styles["login-notlogged-container"]}></div>
+            <div className={styles["login-notlogged-container"]}>
+            <p>
+                    Don't have an account? <Link to="/register">Register here</Link>
+                </p>
+            </div>
         </section>
     );
 };

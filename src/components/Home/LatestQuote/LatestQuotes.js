@@ -1,10 +1,11 @@
-import styles from './LatestQuote.module.css'
+import styles from './LatestQuotes.module.css'
+import { Link } from 'react-router-dom';
 
 
 
 
 
-const LatestQuote = ({quote}) => {
+const LatestQuotes = ({quote}) => {
     return (
        
 
@@ -15,10 +16,10 @@ const LatestQuote = ({quote}) => {
             
             <div className={styles["quote-bottom-wrapper"]}>
             <span className={styles["quote-author"]}>- {quote.author}</span>
-            <a className={styles["quote-details-link"]} href="">
+            <Link className={styles["quote-details-link"]} to={`/catalog/${quote._id}`} >
             
                 Details
-            </a>
+            </Link>
             </div>
           
         </div>
@@ -27,4 +28,4 @@ const LatestQuote = ({quote}) => {
 
 }
 
-export default LatestQuote;
+export default LatestQuotes;

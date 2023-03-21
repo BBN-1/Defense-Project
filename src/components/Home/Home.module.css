@@ -1,4 +1,4 @@
-.catalog-title {
+.home-title {
     margin: auto 0;
     text-align: center;
     padding-bottom: 40px;
@@ -6,7 +6,7 @@
     letter-spacing: 1.2px;
 }
 
-.catalog-cards-container {
+.home-cards-container {
     display: flex;
     gap: 40px;
     flex-wrap: wrap;

@@ -1,21 +1,25 @@
 import styles from './CatalogItem.module.css'
+import { Link } from 'react-router-dom';
 
-const CatalogItem = () => {
+
+const CatalogItem = ({quote}) => {
+
+    
+
     return (
 
         <div className={styles["quote-card"]}>
         <p className={styles["quote-text"]}>
-            “Two things are infinite: the universe and human stupidity;
-            and I'm not sure about the universe.” “Two things are
-            infinite: the universe and human stupidity; and I'm not sure
-            about the universe.” “Two things are infinite: the universe
-            and human stupidity; and I'm not sure about the universe.”
+            “{quote.text}”
         </p>
-        <span className={styles["quote-author"]}>- Albert Einstein</span>
-
-        <a className={styles["quote-details-link"]} href="">
+       
+        <div className={styles["quote-bottom-wrapper"]}>
+        <span className={styles["quote-author"]}>- {quote.author}</span>
+        <Link className={styles["quote-details-link"]} to={`/catalog/${quote._id}`}>
             Details
-        </a>
+        </Link>
+        </div>
+        
     </div>
     );
 }

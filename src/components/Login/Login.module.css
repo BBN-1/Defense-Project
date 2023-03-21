@@ -120,7 +120,7 @@
 
 .login-notlogged-container {
     text-align: center;
-    padding-top: 120px;
+    padding-top: 115px;
     height: 100px;
     color: #c9c9c9;
 }
@@ -133,6 +133,7 @@
 }
 
 .login-notlogged-container p a:hover {
+    
     color: #f40137;
  
     transition: all 1.3s cubic-bezier(0.19, 1, 0.22, 1);

@@ -14,7 +14,7 @@ const Register = () => {
             <div className={styles["register-cta-container"]}>
                 <h2 className={styles["register-cta-title"]}>REGISTER</h2>
                 <p className={styles["register-cta-para"]}>
-                    Please fill in the form in order to register!
+                    Please fill in the form!
                 </p>
             </div>
 

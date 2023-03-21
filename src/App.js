@@ -8,7 +8,6 @@ import Profile from "./components/Profile/Profile";
 import Catalog from "./components/Catalog/Catalog";
 import Create from "./components/Create/Create";
 import Edit from "./components/Edit/Edit";
-import LatestQuote from "./components/Home/LatestQuote/LatestQuote";
 import Details from "./components/Details/Details";
 import NotFound from "./components/404/NotFound";
 
@@ -21,13 +20,13 @@ function App() {
            <Routes>     
                 <Route path="/" element={<Home />}/>
             
-                <Route path="/details" element={<Details />} />
-                <Route path="/edit" element={<Edit />} />
-                <Route path="/create" element={<Create />} />
                 <Route path="/catalog" element={<Catalog />} />
-                <Route path="/Profile" element={<Profile />} />
+                <Route path="/catalog/:quoteId" element={<Details />} />
                 <Route path="/register" element={<Register />} />
                 <Route path="/login" element={<Login />} />
+                <Route path="/create" element={<Create />} />
+                <Route path="/edit" element={<Edit />} />
+                <Route path="/Profile" element={<Profile />} />
                 <Route path="*" element={<NotFound />}/>
              
             </Routes>
