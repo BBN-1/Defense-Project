@@ -1,7 +1,7 @@
 import styles from "./Home.module.css";
 
-
-import LatestQuote from "./LatestQuote/LatestQuotes";
+import CatalogItem from "../Catalog/CatalogItem/CatalogItem";
+// import LatestQuote from "./LatestQuote/LatestQuotes";
 
 import * as gameService from "../../services/gameService";
 import { useEffect, useState } from "react";
@@ -25,7 +25,7 @@ const Home = () => {
                 Latest Motivations
             </h1>
             <section className={styles["home-cards-container"]}>
-                { quotes.map(quote => <LatestQuote key={quote._id }quote={quote}/>)}
+                { quotes.map(quote => <CatalogItem key={quote._id }quote={quote}/>)}
 
         
             </section>
