@@ -14,7 +14,7 @@ const Catalog = () => {
         })
     },[])
 
-    console.log(allQuotes);
+    
 
 
 

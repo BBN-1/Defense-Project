@@ -1,16 +1,22 @@
 import styles from "./Login.module.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAt, faLock } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
+import { useContext } from "react";
+import { authContext } from "../../contexts/authContext";
+import * as authService from "../../services/authService";
 
 const emailIcon = <FontAwesomeIcon icon={faAt} />;
 const passwordIcon = <FontAwesomeIcon icon={faLock} />;
 
 const Login = () => {
+    const { userLogin } = useContext(authContext);
+
     const [password, setPassword] = useState("");
     const [email, setEmail] = useState("");
-    
+
+    const navigate = useNavigate();
 
     const handlePassword = (e) => {
         setPassword(e.target.value);
@@ -20,10 +26,32 @@ const Login = () => {
         setEmail(e.target.value);
     };
 
-    const onSubmit = (e) => {
+    const onSubmit = async (e) => {
         e.preventDefault();
 
-        console.log(email + " " + password);
+        if (password == "" || email == "") {
+            alert("Please fill in the needed information");
+            return;
+        }
+
+        console.log(email, password);
+
+        try {
+            const authData = await authService.login(email, password);
+            if(!authData.accessToken) {
+                navigate('/bad')
+            } else {
+                userLogin(authData)
+                navigate('/catalog')
+            }
+        } catch (error) {
+            navigate('/bad')
+        }
+       
+
+
+
+
     };
 
     return (
@@ -31,7 +59,7 @@ const Login = () => {
             <div className={styles["login-cta-container"]}>
                 <h2 className={styles["login-cta-title"]}>LOGIN</h2>
                 <p className={styles["login-cta-para"]}>
-                    Please enter you login and password!
+                    Please enter you email and password!
                 </p>
             </div>
 
@@ -66,8 +94,9 @@ const Login = () => {
             </form>
 
             <div className={styles["login-notlogged-container"]}>
-            <p>
-                    Don't have an account? <Link to="/register">Register here</Link>
+                <p>
+                    Don't have an account?{" "}
+                    <Link to="/register">Register here</Link>
                 </p>
             </div>
         </section>

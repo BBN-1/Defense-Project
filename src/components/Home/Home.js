@@ -25,7 +25,7 @@ const Home = () => {
                 Latest Motivations
             </h1>
             <section className={styles["home-cards-container"]}>
-                { quotes.map(quote => <CatalogItem key={quote._id }quote={quote}/>)}
+                { quotes.map(quote => <CatalogItem key={quote._id } quote={quote}/>)}
 
         
             </section>

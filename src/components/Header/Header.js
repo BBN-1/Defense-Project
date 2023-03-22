@@ -1,9 +1,14 @@
 import { NavLink } from "react-router-dom";
+import { useContext } from "react";
+import { authContext } from "../../contexts/authContext";
 
 import styles from "./Header.module.css";
 import main_logo_transparent from "../../images/main_logo_transparent.png";
+import { logout } from "../../services/authService";
 
 const Header = () => {
+    const { user } = useContext(authContext);
+
     const setHeaderLinks = ({ isActive }) => {
         return isActive ? styles["active-link"] : styles["non-active-link"];
     };
@@ -20,11 +25,6 @@ const Header = () => {
                 </div>
                 <ol role="list" className={styles["main-links-box"]}>
                     <li>
-                        <NavLink to="/create" className={setHeaderLinks}>
-                            CREATE
-                        </NavLink>
-                    </li>
-                    <li>
                         <NavLink to="/catalog" className={setHeaderLinks}>
                             GET{" "}
                             <span className={styles["red-exclamation-point"]}>
@@ -33,27 +33,51 @@ const Header = () => {
                         </NavLink>
                     </li>
 
-                    <li>
-                        <NavLink to="/login" className={setHeaderLinks}>
-                            LOGIN
-                        </NavLink>
-                    </li>
+                    {user.accessToken ? 
+                        <>
+                            <li>
+                                <NavLink
+                                    to="/create"
+                                    className={setHeaderLinks}
+                                >
+                                    CREATE
+                                </NavLink>
+                            </li>
+                            <li>
+                                <NavLink
+                                    to="/profile"
+                                    className={setHeaderLinks}
+                                >
+                                    PROFILE
+                                </NavLink>
+                            </li>
+                            <li >
+                                <NavLink
+                                    to="/logout"
+                                    className={setHeaderLinks}
+                                >
+                                    LOGOUT
+                                </NavLink>
+                            </li>
+                        </>
+                     : 
+                        <>
+                            <li>
+                                <NavLink to="/login" className={setHeaderLinks}>
+                                    LOGIN
+                                </NavLink>
+                            </li>
 
-                    <li>
-                        <NavLink to="/register" className={setHeaderLinks}>
-                            REGISTER
-                        </NavLink>
-                    </li>
-                    <li>
-                        <NavLink to="/profile" className={setHeaderLinks}>
-                            PROFILE
-                        </NavLink>
-                    </li>
-                    <li>
-                        <NavLink to="/logout" className={setHeaderLinks}>
-                            LOGOUT
-                        </NavLink>
-                    </li>
+                            <li>
+                                <NavLink
+                                    to="/register"
+                                    className={setHeaderLinks}
+                                >
+                                    REGISTER
+                                </NavLink>
+                            </li>
+                        </>
+                    }
                 </ol>
             </nav>
         </header>

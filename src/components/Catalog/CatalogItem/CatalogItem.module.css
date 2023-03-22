@@ -69,13 +69,13 @@
         0 0 1px #f4013662, 0 0 10px #f4013662, inset 0 0 15px #f4013662;
 }
 
- .quote-details-link:hover {
+.quote-details-link:hover {
     color: #121212;
     height: 45px;
     padding: 0 40px 0 40px;
-    
+
     color: #f40137;
     box-shadow: 0 0 1px #273b0f62, 0 0 5px #5a941862, 0 0 5px #d7e46177,
-    0 0 1px #5a941862, 0 0 10px #5a941862, inset 0 0 15px #27460462;
+        0 0 1px #5a941862, 0 0 10px #5a941862, inset 0 0 15px #27460462;
     transition: all 1.8s cubic-bezier(0.19, 1, 0.22, 1);
-} 
+}
