@@ -13,18 +13,19 @@ import Details from "./components/Details/Details";
 import NotFound from "./components/404/NotFound";
 import { Logout } from "./components/Logout/Logout";
 import { useState } from "react";
+import { useLocalStorage } from "./hooks/useLocalStorage";
 
 
 function App() {
 
-    const [auth, setAuth] = useState({});
+    const [auth, setLocalStorage] = useLocalStorage("auth",{});
 
     const userLogin = (authData) => {
-        setAuth(authData);
+        setLocalStorage(authData);
     }
 
     const userLogout = () => {
-        setAuth({});
+        setLocalStorage({});
     }
 
     return (

@@ -25,7 +25,7 @@ const Profile = () => {
             <div className={styles["profile-card"]}>
                 <div className={styles["profile-card-username-container"]}>
                     <i className={styles["username-icon"]}>{userIcon}</i>
-                    <h1 className={styles["profile-card-username"]}>{user._id}</h1>
+                    <h1 className={styles["profile-card-username"]}>{user.username}</h1>
                 </div>
 
                 <div className={styles["profile-card-email-container"]}>
