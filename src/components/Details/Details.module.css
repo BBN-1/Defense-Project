@@ -51,7 +51,7 @@
     gap: 30px;
 }
 
-.details-buttons-container button {
+.details-buttons-container button,.details-buttons-container a {
     line-height: 22px;
     text-decoration: none;
     color: #c9c9c9;
@@ -80,6 +80,31 @@
     transition: all 1.3s cubic-bezier(0.19, 1, 0.22, 1);
 }
 
+
+.details-buttons-container a {
+    display: flex;
+    padding-top: 11px;
+
+    
+
+}
+
+.details-buttons-container a:hover {
+    display: flex;
+    padding-top: 11px;
+    height: 45px;
+    
+    color: #f40137;
+    cursor: pointer;
+    background-color: transparent;
+    box-shadow: 0 0 1px #c9c9c9, 0 0 5px #c9c9c9, 0 0 5px #d7e46177,
+        0 0 1px #9bc54762, 0 0 10px #9cdb5562, inset 0 0 15px #88d64c62;
+    transition: all 1.3s cubic-bezier(0.19, 1, 0.22, 1);
+    
+
+}
+
+
 .icon {
     color: #f40137;
     line-height: 22px;
@@ -89,6 +114,7 @@
 
 .details-comment-form-container {
     background-color: transparent;
+    
     height: 350px;
     padding-left: 10%;
     padding-right: 10%;
@@ -165,7 +191,7 @@
     color: #c9c9c9;
     font-size: large;
     font-weight: bold;
-
+    
     height: 45px;
     padding: 0 20px 0 20px;
     color: #c9c9c9;
@@ -177,7 +203,8 @@
         0 0 1px #f4013662, 0 0 10px #f4013662, inset 0 0 15px #f4013662;
 }
 
-.comment-btn:hover {
+.comment-btn:hover,
+.anonymous-container:hover  {
     height: 45px;
     padding: 0 20px 0 20px;
     color: #f40137;
@@ -198,7 +225,7 @@
     margin: 0 auto;
     display: flex;
     flex-basis: 100%;
-    align-self: flex-end;
+    justify-content: center;
 }
 
 .details-comments-container-inside-wrapper {
@@ -215,17 +242,40 @@
         0 0 1px #f4013662, 0 0 10px #f4013662, inset 0 0 15px #f4013662;
 }
 
-.details-comments-container-single-comment {
-    padding: 4px 0px 10px 0px;
-    border-radius: 7px;
-    background-color: #c9c9c9;
-    color: #121212;
-    flex-basis: 100%;
-    
-    
-}
+
 
 .comments-wrapper-title{
     color: #c9c9c9;
     font-size: large;
+}
+
+.anonymous-container {
+    display: flex;
+    
+    align-items: center;
+    line-height: 22px;
+    text-decoration: none;
+    color: #c9c9c9;
+    font-size: large;
+    font-weight: bold;
+    
+    height: 45px;
+    padding: 0 20px 0 20px;
+    color: #c9c9c9;
+    cursor: pointer;
+    border: 1px solid #c9c9c9;
+    border-radius: 7px;
+    background-color: transparent;
+    box-shadow: 0 0 1px #c9c9c9, 0 0 5px #c9c9c9, 0 0 5px #f4013662,
+        0 0 1px #f4013662, 0 0 10px #f4013662, inset 0 0 15px #f4013662;
+}
+
+.anonymous-container label {
+    margin-left: 10px;
+}
+
+.anonymous-container input[type="checkbox"] {
+    vertical-align: middle;
+    width: 22px;
+    height: 22px;
 }

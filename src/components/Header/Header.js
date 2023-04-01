@@ -4,7 +4,7 @@ import { authContext } from "../../contexts/authContext";
 
 import styles from "./Header.module.css";
 import main_logo_transparent from "../../images/main_logo_transparent.png";
-import { logout } from "../../services/authService";
+
 
 const Header = () => {
     const { user } = useContext(authContext);

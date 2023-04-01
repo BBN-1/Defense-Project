@@ -1,45 +1,71 @@
 import styles from "./Details.module.css";
+import Comment from "./Comment/Comment";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPencil, faRadiation } from "@fortawesome/free-solid-svg-icons";
-import { useParams } from "react-router-dom";
-import * as gameService from '../../services/gameService'
+import { Link, useParams } from "react-router-dom";
+import * as gameService from "../../services/gameService";
 import { useEffect, useState } from "react";
+import * as commentService from "../../services/commentService";
 
 const pencil = <FontAwesomeIcon icon={faPencil} />;
 const danger = <FontAwesomeIcon icon={faRadiation} />;
 
 const Details = () => {
+    const [quote, setQuote] = useState({});
+    const { quoteId } = useParams();
 
-    const [quote, setQuote] = useState({}); 
-    const {quoteId} = useParams();
-
-    console.log(quoteId);
+    const [comment, setComment] = useState("");
+    const [comments, setComments] = useState([]);
+    const [anonymous, setAnonymous] = useState(false);
 
     useEffect(() => {
-        gameService.getOne(quoteId).then(
-            res => setQuote(res)
-            
-        );
-    },[]);
+        (async () => {
+            const quote = await gameService.getOne(quoteId);
+            setQuote(quote);
 
-    
+            const commentsForQuote = await commentService.getByGameId(quoteId);
+            setComments(commentsForQuote);
+        })();
+    }, []);
+
+    const commentHandler = (e) => {
+        setComment(e.target.value);
+    };
+
+    const anonymousHandler = (e) => {
+        console.log(e.target.checked);
+        setAnonymous(e.target.checked);
+    };
+
+    const onSubmit = async (e) => {
+        e.preventDefault();
+        await commentService.create(quoteId, comment, anonymous);
+
+        setComment("");
+        const commentsForQuote = await commentService.getByGameId(quoteId);
+        setComments([...commentsForQuote]);
+    };
+
+    const enterKey = (e) => {
+        if (e.keyCode === 13) {
+            e.preventDefault();
+            onSubmit(e);
+        }
+    };
 
     return (
         <div className={styles["quote-container"]}>
             <div className={styles["text-container"]}>
-                <p className={styles["quote-text"]}>
-                    “{quote.text}”
-                    
-                </p>
+                <p className={styles["quote-text"]}>“{quote.text}”</p>
                 <span className={styles["quote-author"]}>-{quote.author}</span>
             </div>
 
             <div className={styles["details-buttons-container"]}>
-                <button>
+                <Link to={`/edit/${quote._id}`}>
                     <i className={styles.icon}>{pencil}</i>
                     Edit
-                </button>
+                </Link>
                 <button>
                     <i className={styles.icon}>{danger}</i>
                     Delete!
@@ -47,7 +73,11 @@ const Details = () => {
             </div>
 
             <div className={styles["details-comment-form-container"]}>
-                <form className={styles["comment-form"]}>
+                <form
+                    onSubmit={onSubmit}
+                    onKeyDown={enterKey}
+                    className={styles["comment-form"]}
+                >
                     <label
                         className={styles["comment-label"]}
                         htmlFor="comment"
@@ -60,10 +90,27 @@ const Details = () => {
                         id=""
                         cols="30"
                         rows="10"
+                        onChange={commentHandler}
+                        value={comment}
                         placeholder="“People ask you for criticism, but they only want praise.”"
                     ></textarea>
-                    <button className={styles["comment-btn"]}>
-                        Criticize Anyway
+                    <div className={styles["anonymous-container"]}>
+                        <fieldset>
+                            <div>
+                                <input
+                                    type="checkbox"
+                                    id="anonymous"
+                                    name="anonymous"
+                                    unchecked="true"
+                                    value={anonymous}
+                                    onChange={anonymousHandler}
+                                />
+                                <label htmlFor="scales">Hide username!</label>
+                            </div>
+                        </fieldset>
+                    </div>
+                    <button type="submit" className={styles["comment-btn"]}>
+                        Send comment!
                     </button>
                 </form>
             </div>
@@ -74,58 +121,10 @@ const Details = () => {
                         styles["details-comments-container-inside-wrapper"]
                     }
                 >
-                    {" "}
-                    <h1 className={styles["comments-wrapper-title"]}>COMMENTS by MEMBERS</h1>
-                    <p
-                        className={
-                            styles["details-comments-container-single-comment"]
-                        }
-                    >
-                        This is crazy good - posted by Someone Smart
-                    </p>
-                    <p
-                        className={
-                            styles["details-comments-container-single-comment"]
-                        }
-                    >
-                        I thought he meant smth else - posted by BigBrained
-                    </p>
-                    <p
-                        className={
-                            styles["details-comments-container-single-comment"]
-                        }
-                    >
-                        {" "}
-                        Lorem ipsum, dolor sit amet consectetur adipisicing
-                        elit. Natus neque magni vel ipsam consequatur
-                        accusantium, saepe et ratione? Tenetur nulla unde quasi
-                        tempore quidem hic nihil doloremque accusamus ut
-                        voluptatum. - posted by LoremGuy{" "}
-                    </p>
-                    <p
-                        className={
-                            styles["details-comments-container-single-comment"]
-                        }
-                    >
-                        {" "}
-                        Lorem ipsum, dolor sit amet consectetur adipisicing
-                        elit. Natus neque magni vel ipsam consequatur
-                        accusantium, saepe et ratione? Tenetur nulla unde quasi
-                        tempore quidem hic nihil doloremque accusamus ut
-                        voluptatum. - posted by LoremGuy{" "}
-                    </p>
-                    <p
-                        className={
-                            styles["details-comments-container-single-comment"]
-                        }
-                    >
-                        {" "}
-                        Lorem ipsum, dolor sit amet consectetur adipisicing
-                        elit. Natus neque magni vel ipsam consequatur
-                        accusantium, saepe et ratione? Tenetur nulla unde quasi
-                        tempore quidem hic nihil doloremque accusamus ut
-                        voluptatum. - posted by LoremGuy{" "}
-                    </p>
+                    <h1 className={styles["comments-wrapper-title"]}>
+                        COMMENTS by MEMBERS
+                    </h1>
+                    <Comment comments={comments} setComments={setComments} />
                 </div>
             </div>
         </div>

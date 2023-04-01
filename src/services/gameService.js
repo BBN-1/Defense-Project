@@ -1,43 +1,35 @@
 import * as request from "./requester";
 
-const baseUrl = "http://localhost:3030/data";
+const baseUrl = "http://localhost:3030/data/quotes";
 
 export const getLastThree = async () => {
-    const all = await request.get(`${baseUrl}/quotes`);
+    const all = await request.get(baseUrl);
     const lastThreeQuotes = all.splice(-3);
 
     return lastThreeQuotes;
 };
 
 export const getAll = async () => {
-    const all = await request.get(`${baseUrl}/quotes`);
+    const all = await request.get(baseUrl);
 
     return all;
 };
 
 export const getOne = async (id) => {
-    const one = await request.get(`${baseUrl}/quotes/${id}`);
+    const one = await request.get(`${baseUrl}/${id}`);
 
     return one;
 };
 
-export const createQuote = async (quote, authorization) => {
-    const req = await fetch(`${baseUrl}/quotes`, {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json",
-            "X-Authorization": { authorization },
-        },
-        body: JSON.stringify(quote),
-    });
+export const createQuote = async (quote) => {
+    const quoteReq = await request.post(baseUrl, quote);
 
-    const res = await req.json();
-
-    return res;
+    return quoteReq;
 };
 
-//Random number generator //
+export const editQuote = async (id, quote) => {
+    const quoteReq = await request.put(`${baseUrl}/${id}`, quote);
 
-// export const randomQuoteNumberGenerator = (arrLength) => {
-//     return Math.floor(Math.random() * arrLength)
-// }
+    return quoteReq;
+};
+

@@ -2,22 +2,24 @@ import styles from "./Create.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPencil, faUserAstronaut } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
+import * as gameService from "../../services/gameService";
+import { useNavigate } from "react-router-dom";
 
 const pencil = <FontAwesomeIcon icon={faPencil} />;
 const astrounat = <FontAwesomeIcon icon={faUserAstronaut} />;
 
 const Create = () => {
-
-    const [text, setText] = useState('');
-    const [author, setAuthor] = useState('');
+    const [text, setText] = useState("");
+    const [author, setAuthor] = useState("");
     const [error, setError] = useState({
         text: "",
-        author: ""
-    })
+        author: "",
+    });
+
+    const navigate = useNavigate();
 
     const textHandler = (e) => {
         setText(e.target.value);
-
     };
 
     const authorHandler = (e) => {
@@ -25,31 +27,27 @@ const Create = () => {
     };
 
     const validateText = (e) => {
-        const text = e.target.value
-        let errorMsg = ''
+        const text = e.target.value;
+        let errorMsg = "";
 
-        
+        if (text.trim().length < 5) {
+            errorMsg = "msg must be longer than 5 symbols";
+        } else if (text.trim().length > 15)
+            errorMsg = "msg must be shorter than 10 symbols";
 
-        if(text.trim().length < 5) {
-            errorMsg = "msg must be longer than 5 symbols"
-        } else if ( text.trim().length > 15 )(
-            errorMsg = "msg must be shorter than 10 symbols"
-        )
-
-        setError(state => ({
+        setError((state) => ({
             ...state,
-            text: errorMsg
-        }))
-    }
+            text: errorMsg,
+        }));
+    };
 
     const onSubmit = (e) => {
         e.preventDefault();
+        gameService.createQuote({ text, author });
+        navigate("/");
 
-        console.log( text + " " + author);
-
-
-    }
-
+        console.log(text + " " + author);
+    };
 
     return (
         <section className={styles["create-form-container"]}>
