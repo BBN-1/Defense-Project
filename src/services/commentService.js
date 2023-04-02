@@ -10,7 +10,7 @@ export const create = async (quoteId, comment, anonymous) => {
     
 }
 
-export const getByGameId = (quoteId) => {
+export const getByQuoteId = (quoteId) => {
     const relations = encodeURIComponent(`user=_ownerId:users`);
     const search = encodeURIComponent(`quoteId="${quoteId}"`);
 
@@ -20,4 +20,16 @@ export const getByGameId = (quoteId) => {
 export const deleteComment = async (id) => {
     const res = await request.del(`${baseUrl}/${id}`);
     return res;
+}
+
+export const editComment = async (id, comment) => {
+    const commentReq = await request.put(`${baseUrl}/${id}`, comment);
+
+    return commentReq;
+}
+
+export const getOneComment = async (id) => {
+    const one = await request.get(`${baseUrl}/${id}`);
+
+    return one;
 }

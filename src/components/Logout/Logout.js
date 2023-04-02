@@ -3,7 +3,7 @@ import * as authService from "../../services/authService";
 import { authContext } from "../../contexts/authContext";
 import { useNavigate } from "react-router-dom";
 
-export const Logout = () => {
+const Logout = () => {
     const navigate = useNavigate();
     const { user, userLogout } = useContext(authContext);
 
@@ -21,3 +21,5 @@ export const Logout = () => {
 
     return null;
 };
+
+export default Logout;

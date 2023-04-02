@@ -3,41 +3,38 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPencil, faUserAstronaut } from "@fortawesome/free-solid-svg-icons";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import * as gameService from "../../services/gameService";
+import * as quoteService from "../../services/quoteService";
 import { useNavigate } from "react-router-dom";
 
 const pencil = <FontAwesomeIcon icon={faPencil} />;
 const astrounat = <FontAwesomeIcon icon={faUserAstronaut} />;
 
 const Edit = () => {
-    const [quote, setQuote] = useState({});
     const { quoteId } = useParams();
+    const [text, setText] = useState("");
+    const [author, setAuthor] = useState("");
     const navigate = useNavigate();
 
     useEffect(() => {
-        gameService.getOne(quoteId).then((res) => {
-            setQuote(res);
+        quoteService.getOne(quoteId).then((res) => {
+            setText(res.text);
+            setAuthor(res.author);
         });
     }, [quoteId]);
 
     const textHandler = (e) => {
-        setQuote({
-            ...quote,
-            text: e.target.value,
-        });
+        setText(e.target.value);
     };
 
     const authorHandler = (e) => {
-        setQuote({
-            ...quote,
-            author: e.target.value,
-        });
+        setAuthor(e.target.value);
     };
 
     const onSubmit = (e) => {
         e.preventDefault();
-        gameService.editQuote(quoteId, quote);
-        navigate(`/catalog/${quote._id}`);
+
+        quoteService.editQuote(quoteId, { text, author });
+        navigate(`/catalog/${quoteId}`);
     };
 
     return (
@@ -57,7 +54,7 @@ const Edit = () => {
                         type="text"
                         id="text"
                         onChange={textHandler}
-                        value={quote.text}
+                        value={text}
                         name="quote"
                     />
                 </div>
@@ -68,7 +65,7 @@ const Edit = () => {
                         type="author"
                         id="author"
                         onChange={authorHandler}
-                        value={quote.author}
+                        value={author}
                         name="author"
                     />
                 </div>

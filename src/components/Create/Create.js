@@ -2,7 +2,7 @@ import styles from "./Create.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPencil, faUserAstronaut } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
-import * as gameService from "../../services/gameService";
+import * as quoteService from "../../services/quoteService";
 import { useNavigate } from "react-router-dom";
 
 const pencil = <FontAwesomeIcon icon={faPencil} />;
@@ -43,7 +43,7 @@ const Create = () => {
 
     const onSubmit = (e) => {
         e.preventDefault();
-        gameService.createQuote({ text, author });
+        quoteService.createQuote({ text, author });
         navigate("/");
 
         console.log(text + " " + author);

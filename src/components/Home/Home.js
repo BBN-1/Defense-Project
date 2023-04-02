@@ -3,7 +3,7 @@ import styles from "./Home.module.css";
 import CatalogItem from "../Catalog/CatalogItem/CatalogItem";
 // import LatestQuote from "./LatestQuote/LatestQuotes";
 
-import * as gameService from "../../services/gameService";
+import * as quoteService from "../../services/quoteService";
 import { useEffect, useState } from "react";
 
 
@@ -11,7 +11,7 @@ const Home = () => {
     const [quotes, setQuotes] = useState([]);
 
     useEffect(() => {
-        gameService.getLastThree().then( res => {
+        quoteService.getLastThree().then( res => {
             setQuotes(res);
         });
     }, []);

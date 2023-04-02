@@ -11,7 +11,8 @@ import Create from "./components/Create/Create";
 import Edit from "./components/Edit/Edit";
 import Details from "./components/Details/Details";
 import NotFound from "./components/404/NotFound";
-import { Logout } from "./components/Logout/Logout";
+import Logout  from "./components/Logout/Logout";
+import EditComment from "./components/EditComment/EditComment";
 
 function App() {
     return (
@@ -27,10 +28,12 @@ function App() {
                     <Route path="/register" element={<Register />} />
                     <Route path="/login" element={<Login />} />
                     <Route path="/create" element={<Create />} />
-                    <Route path="/edit/:quoteId" element={<Edit />} />
+                    <Route path="/comment/edit/:commentId" element={<EditComment />} />
+                    <Route path="/quote/edit/:quoteId" element={<Edit />} />
                     <Route path="/Profile" element={<Profile />} />
                     <Route path="/logout" element={<Logout />} />
                     <Route path="*" element={<NotFound />} />
+
                 </Routes>
             </div>
         </AuthProvider>

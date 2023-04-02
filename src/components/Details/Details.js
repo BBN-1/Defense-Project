@@ -4,7 +4,7 @@ import Comment from "./Comment/Comment";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPencil, faRadiation } from "@fortawesome/free-solid-svg-icons";
 import { Link, useParams } from "react-router-dom";
-import * as gameService from "../../services/gameService";
+import * as quoteService from "../../services/quoteService";
 import { useEffect, useState } from "react";
 import * as commentService from "../../services/commentService";
 
@@ -21,13 +21,13 @@ const Details = () => {
 
     useEffect(() => {
         (async () => {
-            const quote = await gameService.getOne(quoteId);
+            const quote = await quoteService.getOne(quoteId);
             setQuote(quote);
 
-            const commentsForQuote = await commentService.getByGameId(quoteId);
+            const commentsForQuote = await commentService.getByQuoteId(quoteId);
             setComments(commentsForQuote);
         })();
-    }, []);
+    }, [quoteId]);
 
     const commentHandler = (e) => {
         setComment(e.target.value);
@@ -43,7 +43,7 @@ const Details = () => {
         await commentService.create(quoteId, comment, anonymous);
 
         setComment("");
-        const commentsForQuote = await commentService.getByGameId(quoteId);
+        const commentsForQuote = await commentService.getByQuoteId(quoteId);
         setComments([...commentsForQuote]);
     };
 
@@ -62,7 +62,7 @@ const Details = () => {
             </div>
 
             <div className={styles["details-buttons-container"]}>
-                <Link to={`/edit/${quote._id}`}>
+                <Link to={`/quote/edit/${quote._id}`}>
                     <i className={styles.icon}>{pencil}</i>
                     Edit
                 </Link>
@@ -124,7 +124,7 @@ const Details = () => {
                     <h1 className={styles["comments-wrapper-title"]}>
                         COMMENTS by MEMBERS
                     </h1>
-                    <Comment comments={comments} setComments={setComments} />
+                    <Comment comments={comments} setComments={setComments} owner={quote._ownerId} />
                 </div>
             </div>
         </div>

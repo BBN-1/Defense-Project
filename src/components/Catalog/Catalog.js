@@ -1,7 +1,7 @@
 import styles from "./Catalog.module.css";
 import CatalogItem from "./CatalogItem/CatalogItem";
 
-import * as gameService from '../../services/gameService'
+import * as quoteService from '../../services/quoteService'
 import { useEffect, useState } from "react";
 
 const Catalog = () => {
@@ -9,7 +9,7 @@ const Catalog = () => {
     const [allQuotes, setAllQuotes] = useState([]);
 
     useEffect(() => {
-        gameService.getAll().then( res => {
+        quoteService.getAll().then( res => {
             setAllQuotes(res);
         })
     },[])

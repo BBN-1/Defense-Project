@@ -4,21 +4,30 @@ import { deleteComment } from "../../../services/commentService";
 import { useContext } from "react";
 import { authContext } from "../../../contexts/authContext";
 import { useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
+
 
 const Comment = (props) => {
-    const commentsArray = props.comments;
-    const hideMyUsername = "Anonymous";
-    const defaultUsers = "Default User";
     const { quoteId } = useParams();
     const { user } = useContext(authContext);
+    
+
+    const commentsArray = props.comments;
+
+    const hideMyUsername = "Anonymous";
+    const defaultUsers = "Default User";
 
     const onDelete = (commentId) => {
         return async () => {
             await deleteComment(commentId);
-            const commentsForQuote = await commentService.getByGameId(quoteId);
+            const commentsForQuote = await commentService.getByQuoteId(quoteId);
             props.setComments([...commentsForQuote]);
         };
     };
+
+
+
+
 
     return (
         <ul className={styles["details-comments-container-single-comment"]}>
@@ -32,11 +41,17 @@ const Comment = (props) => {
                                 <p>{comment.user.username || defaultUsers}</p>
                             )}
 
-                            <p>{comment.text}</p>
+                            <p>{(comment.text)}</p>
+
                             {comment._ownerId === user._id && (
-                                <button onClick={onDelete(comment._id)}>
-                                    delete
-                                </button>
+                                <div>
+                                    <button onClick={onDelete(comment._id)}>
+                                        delete
+                                    </button>
+
+                                    <Link to={`/comment/edit/${comment._id}`} >click</Link>
+                                 
+                                </div>
                             )}
                         </li>
                     );
