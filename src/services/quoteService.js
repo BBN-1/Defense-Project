@@ -33,3 +33,8 @@ export const editQuote = async (id, quote) => {
     return quoteReq;
 };
 
+export const deleteQuote = async (id) => {
+    const res = await request.del(`${baseUrl}/${id}`);
+    return res;
+}
+

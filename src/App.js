@@ -11,8 +11,10 @@ import Create from "./components/Create/Create";
 import Edit from "./components/Edit/Edit";
 import Details from "./components/Details/Details";
 import NotFound from "./components/404/NotFound";
-import Logout  from "./components/Logout/Logout";
+import Logout from "./components/Logout/Logout";
 import EditComment from "./components/EditComment/EditComment";
+import PrivateGuard from "./components/Common/PrivateGuard";
+import LoggedInGuard from "./components/Common/LoggedInGuard";
 
 function App() {
     return (
@@ -22,18 +24,24 @@ function App() {
 
                 <Routes>
                     <Route path="/" element={<Home />} />
-
+                    <Route element={<PrivateGuard />}>
+                        <Route path="/create" element={<Create />} />
+                        <Route
+                            path="/comment/edit/:commentId"
+                            element={<EditComment />}
+                        />
+                        <Route path="/Profile" element={<Profile />} />
+                        <Route path="/quote/edit/:quoteId" element={<Edit />} />
+                        <Route path="/logout" element={<Logout />} />
+                    </Route>
+                    <Route element={<LoggedInGuard />}>
+                        <Route path="/register" element={<Register />} />
+                        <Route path="/login" element={<Login />} />
+                    </Route>
                     <Route path="/catalog" element={<Catalog />} />
                     <Route path="/catalog/:quoteId" element={<Details />} />
-                    <Route path="/register" element={<Register />} />
-                    <Route path="/login" element={<Login />} />
-                    <Route path="/create" element={<Create />} />
-                    <Route path="/comment/edit/:commentId" element={<EditComment />} />
-                    <Route path="/quote/edit/:quoteId" element={<Edit />} />
-                    <Route path="/Profile" element={<Profile />} />
-                    <Route path="/logout" element={<Logout />} />
-                    <Route path="*" element={<NotFound />} />
 
+                    <Route path="*" element={<NotFound />} />
                 </Routes>
             </div>
         </AuthProvider>
