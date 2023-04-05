@@ -1,6 +1,7 @@
 import { NavLink } from "react-router-dom";
 import { useContext } from "react";
 import { authContext } from "../../contexts/authContext";
+import Search from "../Search/Search";
 
 import styles from "./Header.module.css";
 import main_logo_transparent from "../../images/main_logo_transparent.png";
@@ -33,7 +34,7 @@ const Header = () => {
                         </NavLink>
                     </li>
 
-                    {user.accessToken ? 
+                    {user.accessToken ?
                         <>
                             <li>
                                 <NavLink
@@ -60,7 +61,7 @@ const Header = () => {
                                 </NavLink>
                             </li>
                         </>
-                     : 
+                        :
                         <>
                             <li>
                                 <NavLink to="/login" className={setHeaderLinks}>
@@ -78,6 +79,12 @@ const Header = () => {
                             </li>
                         </>
                     }
+
+                    <li>
+                     <Search />
+                    </li>
+
+
                 </ol>
             </nav>
         </header>

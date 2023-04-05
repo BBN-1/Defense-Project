@@ -11,6 +11,7 @@ const astrounat = <FontAwesomeIcon icon={faUserAstronaut} />;
 
 const Edit = () => {
     const { quoteId } = useParams();
+    console.log(quoteId);
     const [text, setText] = useState("");
     const [author, setAuthor] = useState("");
     const navigate = useNavigate();

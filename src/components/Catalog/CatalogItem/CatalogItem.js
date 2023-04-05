@@ -7,7 +7,7 @@ const CatalogItem = ({ quote }) => {
             <p className={styles["quote-text"]}>“{quote.text}”</p>
 
             <div className={styles["quote-bottom-wrapper"]}>
-                <span className={styles["quote-author"]}>- {quote.author}</span>
+                <span className={styles["quote-author"]}>- <Link to={`/quote/${quote.author}`} >{quote.author}</Link></span>
                 <Link
                     className={styles["quote-details-link"]}
                     to={`/catalog/${quote._id}`}

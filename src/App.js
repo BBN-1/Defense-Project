@@ -14,7 +14,8 @@ import NotFound from "./components/404/NotFound";
 import Logout from "./components/Logout/Logout";
 import EditComment from "./components/EditComment/EditComment";
 import PrivateGuard from "./components/Common/PrivateGuard";
-import LoggedInGuard from "./components/Common/LoggedInGuard";
+import PublicGuard from "./components/Common/PublicGuard";
+import Author from "./components/Author/Author";
 
 function App() {
     return (
@@ -34,12 +35,13 @@ function App() {
                         <Route path="/quote/edit/:quoteId" element={<Edit />} />
                         <Route path="/logout" element={<Logout />} />
                     </Route>
-                    <Route element={<LoggedInGuard />}>
+                    <Route element={<PublicGuard />}>
                         <Route path="/register" element={<Register />} />
                         <Route path="/login" element={<Login />} />
                     </Route>
                     <Route path="/catalog" element={<Catalog />} />
                     <Route path="/catalog/:quoteId" element={<Details />} />
+                    <Route path="/quote/:authorId" element={<Author />} />
 
                     <Route path="*" element={<NotFound />} />
                 </Routes>

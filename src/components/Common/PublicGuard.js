@@ -2,7 +2,7 @@ import { authContext } from "../../contexts/authContext";
 import { useContext } from "react";
 import { Navigate, Outlet } from "react-router-dom";
 
-const LoggedInGuard = () => {
+const PublicGuard = () => {
     const { isAuthenticated } = useContext(authContext);
     
     if (isAuthenticated) {
@@ -13,4 +13,4 @@ const LoggedInGuard = () => {
     return <Outlet />;
 }
 
-export default LoggedInGuard;
+export default PublicGuard;

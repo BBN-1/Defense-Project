@@ -21,6 +21,14 @@ export const getOne = async (id) => {
     return one;
 };
 
+export const getByAuthorName = async (authorName) => {
+    
+    const search = encodeURIComponent(`author="${authorName}"`);
+    const quotes = await request.get(`${baseUrl}?where=${search}`);
+
+    return quotes;
+}
+
 export const createQuote = async (quote) => {
     const quoteReq = await request.post(baseUrl, quote);
 

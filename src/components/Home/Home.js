@@ -1,7 +1,7 @@
 import styles from "./Home.module.css";
 
 import CatalogItem from "../Catalog/CatalogItem/CatalogItem";
-// import LatestQuote from "./LatestQuote/LatestQuotes";
+
 
 import * as quoteService from "../../services/quoteService";
 import { useEffect, useState } from "react";
