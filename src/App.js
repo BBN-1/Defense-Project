@@ -41,7 +41,7 @@ function App() {
                     </Route>
                     <Route path="/catalog" element={<Catalog />} />
                     <Route path="/catalog/:quoteId" element={<Details />} />
-                    <Route path="/quote/:authorId" element={<Author />} />
+                    <Route path="/author/:authorId" element={<Author />} />
 
                     <Route path="*" element={<NotFound />} />
                 </Routes>

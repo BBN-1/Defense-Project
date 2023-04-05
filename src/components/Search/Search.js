@@ -12,15 +12,21 @@ const Search = () => {
     const [searchResultsLoading, setSearchResultsLoading] = useState(false);
     const [isOpen, setIsOpen] = useState(false);
 
-    useEffect(() => {
-        (async () => {
-            const res = await quoteService.getAll();
-            setAllQuotes(res);
-        })();
-    }, [allQuotes]);
+    // useEffect(() => {
+    //     (async () => {
+    //         const res = await quoteService.getAll();
+    //         setAllQuotes(res);
+    //     })();
+    // }, []);
 
-    const isOpenHandler = () => {
+    console.log(allQuotes);
+
+    const isOpenHandler = async () => {
+
         setIsOpen(true);
+        const res = await quoteService.getAll();
+        setAllQuotes(res);
+
     };
 
     const onCloseEvents = () => {
@@ -31,12 +37,13 @@ const Search = () => {
 
     const handleSearch = (e) => {
         setSearch(e.target.value);
+        console.log(e.target.value);
 
         setSearchResults(
             allQuotes.filter((quote) => {
                 return quote.author
                     .toLowerCase()
-                    .includes(search.toLowerCase());
+                    .includes(e.target.value.toLowerCase()) && e.target.value.toLowerCase().length >= 1;
             })
         );
     };
@@ -63,7 +70,7 @@ const Search = () => {
                             searchResults.map((result) => (
                                 <Link key={result._id}
                                     onClick={onCloseEvents}
-                                    to={`/quote/${result.author}`}
+                                    to={`/author/${result.author}`}
                                     className={styles["search-result-link"]}
                                 >
                                     Author - {result.author} - said.. {result.text.slice(0, 20)}

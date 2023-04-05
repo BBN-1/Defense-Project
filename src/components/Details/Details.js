@@ -55,7 +55,7 @@ const Details = () => {
 
     const deleteQuote = async () => {
         await quoteService.deleteQuote(quoteId);
-        navigate("/");
+        navigate("/", { replace: true });
     };
 
     const onSubmit = async (e) => {
