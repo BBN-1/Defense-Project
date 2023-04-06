@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Spinner from "../Spinner/Spinner";
 import * as quoteService from "../../services/quoteService";
 import { Link } from "react-router-dom";
@@ -12,48 +12,41 @@ const Search = () => {
     const [searchResultsLoading, setSearchResultsLoading] = useState(false);
     const [isOpen, setIsOpen] = useState(false);
 
-    // useEffect(() => {
-    //     (async () => {
-    //         const res = await quoteService.getAll();
-    //         setAllQuotes(res);
-    //     })();
-    // }, []);
-
-    console.log(allQuotes);
-
     const isOpenHandler = async () => {
-
         setIsOpen(true);
         const res = await quoteService.getAll();
         setAllQuotes(res);
-
     };
 
-    const onCloseEvents = () => {
+    const onCloseOrClickOutside = () => {
         setIsOpen(false);
         setSearch("");
         setSearchResults([]);
-    }
+    };
 
     const handleSearch = (e) => {
         setSearch(e.target.value);
-        console.log(e.target.value);
 
         setSearchResults(
-            allQuotes.filter((quote) => {
-                return quote.author
-                    .toLowerCase()
-                    .includes(e.target.value.toLowerCase()) && e.target.value.toLowerCase().length >= 1;
-            })
+            allQuotes.filter(
+                (quote) =>
+                    quote.author
+                        .toLowerCase()
+                        .includes(e.target.value.toLowerCase()) &&
+                    e.target.value.toLowerCase().length >= 1
+            )
         );
     };
-    
 
     return (
         <>
             <button onClick={isOpenHandler}>Search</button>
 
-            <Modal open={isOpen} onClose={onCloseEvents}>
+            <Modal
+                open={isOpen}
+                onClose={onCloseOrClickOutside}
+                outerLayerClick={onCloseOrClickOutside}
+            >
                 <div className="search">
                     <input
                         type="text"
@@ -68,12 +61,14 @@ const Search = () => {
                             </div>
                         ) : (
                             searchResults.map((result) => (
-                                <Link key={result._id}
-                                    onClick={onCloseEvents}
+                                <Link
+                                    key={result._id}
+                                    onClick={onCloseOrClickOutside}
                                     to={`/author/${result.author}`}
                                     className={styles["search-result-link"]}
                                 >
-                                    Author - {result.author} - said.. {result.text.slice(0, 20)}
+                                    Author - {result.author} - said..{" "}
+                                    {result.text.slice(0, 20)}
                                 </Link>
                             ))
                         )}

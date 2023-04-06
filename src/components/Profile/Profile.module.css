@@ -39,7 +39,7 @@
 }
 
 .profile-card {
-    height: 100px;
+    height: 300px;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -64,7 +64,31 @@
 }
 
 .username-icon,
-.email-icon {
+.email-icon,
+.profile-icon-links {
     color: #f40137;
     font-size: 22px;
+}
+
+.profile-bottom-wrapper {
+    /* display: flex;
+    flex-wrap: wrap; */
+    /* padding-top: 15px; */
+    height: 200px;
+    width: 250px;
+}
+
+.profile-card-link {
+    text-decoration: none;
+    color: #c9c9c9;
+    display: block;
+    padding-bottom: 10px;
+    background-color: #121212;
+    flex-basis: 100%;
+    align-self: center;
+}
+
+.profile-icon-links {
+    
+    padding-right: 10px;
 }

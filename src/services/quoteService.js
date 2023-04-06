@@ -46,3 +46,10 @@ export const deleteQuote = async (id) => {
     return res;
 }
 
+export const getAllQuotesByAuthor = async (ownerId) => {
+    const search = encodeURIComponent(`_ownerId="${ownerId}"`);
+    const quotes = await request.get(`${baseUrl}?where=${search}`);
+
+    return quotes;
+}
+

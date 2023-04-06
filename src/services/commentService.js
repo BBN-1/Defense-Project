@@ -33,3 +33,10 @@ export const getOneComment = async (id) => {
 
     return one;
 }
+
+export const getAllCommentsByUser = async (ownerId) => {
+    const search = encodeURIComponent(`_ownerId="${ownerId}"`);
+    const comments = await request.get(`${baseUrl}?where=${search}`);
+
+    return comments;
+}

@@ -22,6 +22,12 @@ const Comment = (props) => {
         setIsOpen(true);
     };
 
+    
+    const onCloseOrClickOutside = () => {
+        setIsOpen(false);
+       
+    };
+
    
 
     const onConfirmDelete = (commentId) => {
@@ -58,6 +64,7 @@ const Comment = (props) => {
                                     <Modal
                                         open={isOpen}
                                         onClose={() => setIsOpen(false)}
+                                        outerLayerClick={onCloseOrClickOutside}
                                     >
                                         <p>
                                             Are you sure you want to delete this

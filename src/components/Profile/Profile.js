@@ -1,14 +1,21 @@
 import styles from "./Profile.module.css";
 import { useContext } from "react";
 import { authContext } from "../../contexts/authContext";
+import { Link } from "react-router-dom";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faMailBulk, faUser } from "@fortawesome/free-solid-svg-icons";
+import { faMailBulk, faUser, faPenAlt, faComments } from "@fortawesome/free-solid-svg-icons";
 
 const userIcon = <FontAwesomeIcon icon={faUser} />;
 const mailIcon = <FontAwesomeIcon icon={faMailBulk} />;
+const penIcon = <FontAwesomeIcon icon={faPenAlt} />;
+const commentIcon = <FontAwesomeIcon icon={faComments} />;
 
 const Profile = () => {
+
+
+
+
 
     const {user} = useContext(authContext)
     console.log(user);
@@ -18,7 +25,7 @@ const Profile = () => {
             <div className={styles["profile-header"]}>
                 <h2 className={styles["profile-title"]}>Profile</h2>
                 <p className={styles["profile-para"]}>
-                    Your personal information
+                    Your personal information and activity
                 </p>
             </div>
 
@@ -33,6 +40,15 @@ const Profile = () => {
                     <p className={styles["profile-card-email"]}>
                         {user.email}
                     </p>
+                </div>
+
+                <div className={styles["profile-bottom-wrapper"]}>
+
+                    <Link to={'/profile/posts'} className={styles["profile-card-link"]}>
+                    <i className={styles["profile-icon-links"]}>{penIcon}</i>
+                        Posts</Link>
+                    <Link to={'/profile/comments'} className={styles["profile-card-link"]}>
+                    <i className={styles["profile-icon-links"]}>{commentIcon}</i>Comments</Link>
                 </div>
             </div>
         </section>

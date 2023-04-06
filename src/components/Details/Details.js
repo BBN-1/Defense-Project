@@ -58,6 +58,11 @@ const Details = () => {
         navigate("/", { replace: true });
     };
 
+    const onCloseOrClickOutside = () => {
+        setIsOpen(false);
+       
+    };
+
     const onSubmit = async (e) => {
         e.preventDefault();
         await commentService.create(quoteId, comment, anonymous);
@@ -92,7 +97,7 @@ const Details = () => {
                         Delete!
                     </button>
 
-                    <Modal open={isOpen} onClose={() => setIsOpen(false)}>
+                    <Modal open={isOpen} onClose={onCloseOrClickOutside} outerLayerClick={onCloseOrClickOutside}>
                         <p>Are you sure you want to delete this quote?</p>
                         <button onClick={deleteQuote}>Yes</button>
                     </Modal>

@@ -16,6 +16,8 @@ import EditComment from "./components/EditComment/EditComment";
 import PrivateGuard from "./components/Common/PrivateGuard";
 import PublicGuard from "./components/Common/PublicGuard";
 import Author from "./components/Author/Author";
+import ProfilePosts from "./components/Profile/ProfilePosts/ProfilePosts";
+import ProfileComments from "./components/Profile/ProfileComments/ProfileComments";
 
 function App() {
     return (
@@ -32,6 +34,8 @@ function App() {
                             element={<EditComment />}
                         />
                         <Route path="/Profile" element={<Profile />} />
+                        <Route path="/profile/posts" element={<ProfilePosts />} />
+                        <Route path="/profile/comments" element={<ProfileComments />} />
                         <Route path="/quote/edit/:quoteId" element={<Edit />} />
                         <Route path="/logout" element={<Logout />} />
                     </Route>
