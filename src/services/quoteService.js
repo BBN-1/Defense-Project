@@ -53,3 +53,10 @@ export const getAllQuotesByAuthor = async (ownerId) => {
     return quotes;
 }
 
+export const getRandomeQuote = async () => {
+    const all = await request.get(baseUrl);
+    const randomQuote = all[Math.floor(Math.random() * all.length)];
+
+    return randomQuote;
+}
+

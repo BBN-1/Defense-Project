@@ -1,12 +1,25 @@
+:root {
+    --homepage-quote-color: #ffe6b7;
+    --text-color: white;
+    --header-background-color: #2a5a7c;
+    --highlight-red-color: #f40137;
+}
+
 body {
-    
     width: 100%;
     max-width: 1920px;
     margin: 0 auto;
-    padding-left: 40px;
-    padding-right: 40px;
+
     padding-bottom: 40px;
-    background-color: #121212;
+
+    background-image: linear-gradient(
+        to bottom,
+        #ffffff,
+        #fdfeff,
+        #fafdff,
+        #f6fcff,
+        #f2fcff
+    );
 
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
         "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
@@ -41,7 +54,6 @@ ol[role="list"] {
     list-style: none;
     margin: 0;
     padding: 0;
-    
 }
 
 /* Set core root defaults */

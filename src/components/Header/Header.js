@@ -4,11 +4,11 @@ import { authContext } from "../../contexts/authContext";
 import Search from "../Search/Search";
 
 import styles from "./Header.module.css";
-import main_logo_transparent from "../../images/main_logo_transparent.png";
+import main_logo_transparent from "../../images/logo_header.png";
 
 
 const Header = () => {
-    const { user } = useContext(authContext);
+        const { user } = useContext(authContext);
 
     const setHeaderLinks = ({ isActive }) => {
         return isActive ? styles["active-link"] : styles["non-active-link"];
@@ -80,7 +80,7 @@ const Header = () => {
                         </>
                     }
 
-                    <li>
+                    <li className={styles['header-searchBtn']}>
                      <Search />
                     </li>
 

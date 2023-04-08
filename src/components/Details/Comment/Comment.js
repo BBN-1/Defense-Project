@@ -22,13 +22,9 @@ const Comment = (props) => {
         setIsOpen(true);
     };
 
-    
     const onCloseOrClickOutside = () => {
         setIsOpen(false);
-       
     };
-
-   
 
     const onConfirmDelete = (commentId) => {
         return async () => {
@@ -39,25 +35,53 @@ const Comment = (props) => {
         };
     };
 
-
-
     return (
-        <ul className={styles["details-comments-container-single-comment"]}>
+        <ul
+            role="list"
+            className={styles["details-comments-container-single-comment"]}
+        >
             {commentsArray.length > 0 ? (
                 commentsArray?.map((comment) => {
                     return (
-                        <li key={comment._id}>
+                        <li
+                            className={
+                                styles["details-comments-single-comment"]
+                            }
+                            key={comment._id}
+                        >
+                              <p className={styles["single-comment-text"]}>
+                                {comment.text}
+                            </p>
                             {comment.hide ? (
-                                <p>{hideMyUsername}</p>
+                                <p
+                                    className={
+                                        styles["single-comment-authorHidden"]
+                                    }
+                                >
+                                   by - {hideMyUsername}
+                                </p>
                             ) : (
-                                <p>{comment.user.username || defaultUsers}</p>
+                                <p className={styles["single-comment-author"]}>
+                                   by - {comment.user.username || defaultUsers}
+                                </p>
                             )}
 
-                            <p>{comment.text}</p>
+                          
 
                             {comment._ownerId === user._id && (
-                                <div>
-                                    <button onClick={onDelete}>
+                                <div
+                                    className={
+                                        styles["details-comments-btn-container"]
+                                    }
+                                >
+                                    <button
+                                        className={
+                                            styles[
+                                                "details-comments-container-deleteBtn"
+                                            ]
+                                        }
+                                        onClick={onDelete}
+                                    >
                                         delete
                                     </button>
 
@@ -70,13 +94,24 @@ const Comment = (props) => {
                                             Are you sure you want to delete this
                                             comment?
                                         </p>
-                                        <button onClick={onConfirmDelete(comment._id)}>
+                                        <button
+                                            onClick={onConfirmDelete(
+                                                comment._id
+                                            )}
+                                        >
                                             Yes
                                         </button>
                                     </Modal>
 
-                                    <Link to={`/comment/edit/${comment._id}`}>
-                                        Edit
+                                    <Link
+                                        className={
+                                            styles[
+                                                "details-comments-container-editLink"
+                                            ]
+                                        }
+                                        to={`/comment/edit/${comment._id}`}
+                                    >
+                                        edit
                                     </Link>
                                 </div>
                             )}

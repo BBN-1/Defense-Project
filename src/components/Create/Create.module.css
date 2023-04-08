@@ -1,10 +1,11 @@
 .create-form-container {
+    margin: 70px auto;
     padding-top: 45px;
     padding-left: 20px;
     padding-right: 20px;
     padding-bottom: 20px;
-    background-color: #121212;
-    margin: 0 auto;
+    background-image: linear-gradient(to left top, #2a5a7c, #6460a0, #b7559e, #f44e6f, #fe761e);
+    
     width: 600px;
     height: 550px;
     border: 1px solid #c9c9c9;
@@ -28,14 +29,14 @@
     text-align: center;
     font-size: 33px;
     font-weight: 700;
-    color: #c9c9c9;
+    color: var(--text-color);
     display: flex;
     justify-content: center;
 }
 
 .create-cta-para {
     font-size: 18px;
-    color: #c9c9c99f;
+    color: var(--text-color);
 }
 
 .create-form {
@@ -61,7 +62,7 @@
 .create-form input,
 .create-form textarea {
     font-size: larger;
-    color: #c9c9c9;
+    color: var(--text-color);
     height: 35px;
     line-height: 28px;
     text-indent: 40px;
@@ -98,7 +99,7 @@
 .author-icon,
 .text-icon {
     position: absolute;
-    color: #c9c9c9;
+    color: var(--text-color);
     font-size: 22px;
     padding-right: 10px;
     padding-left: 10px;
@@ -113,7 +114,7 @@
     font-weight: bold;
     height: 45px;
     padding: 0 40px 0 40px;
-    color: #c9c9c9;
+    color: var(--text-color);
     cursor: pointer;
     border: 1px solid #c9c9c9;
     border-radius: 7px;
@@ -125,7 +126,7 @@
 .create-btn:hover {
     height: 45px;
 
-    color: #9bc54762;
+    color: var(--homepage-quote-color);
 
     box-shadow: 0 0 1px #c9c9c9, 0 0 5px #c9c9c9, 0 0 5px #d7e46177,
         0 0 1px #9bc54762, 0 0 10px #9cdb5562, inset 0 0 15px #88d64c62;

@@ -40,7 +40,7 @@ const Search = () => {
 
     return (
         <>
-            <button onClick={isOpenHandler}>Search</button>
+            <button className={styles['header-searchBtn']} onClick={isOpenHandler}>Search</button>
 
             <Modal
                 open={isOpen}

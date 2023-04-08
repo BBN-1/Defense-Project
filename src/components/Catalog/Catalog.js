@@ -20,7 +20,7 @@ const Catalog = () => {
 
     return (
         <div className={styles["catalog-contianer"]}> 
-        <h1 className={styles["catalog-title"]}>All Motivations</h1>
+        <h1 className={styles["catalog-title"]} >All Quotes</h1>
         <section className={styles["catalog-cards-container"]}>
         
         {allQuotes.map(quote => <CatalogItem  key={quote._id} quote={quote} />)}

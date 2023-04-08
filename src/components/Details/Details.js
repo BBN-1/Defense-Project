@@ -159,7 +159,7 @@ const Details = () => {
                     }
                 >
                     <h1 className={styles["comments-wrapper-title"]}>
-                        COMMENTS by MEMBERS
+                        comments by members
                     </h1>
                     <Comment
                         comments={comments}
