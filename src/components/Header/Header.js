@@ -49,7 +49,7 @@ const Header = () => {
                                     to="/profile"
                                     className={setHeaderLinks}
                                 >
-                                    PROFILE
+                                    {user.username?.toUpperCase() || "DEFAULT USER"}
                                 </NavLink>
                             </li>
                             <li >

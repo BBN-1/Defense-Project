@@ -52,6 +52,10 @@ const Comment = (props) => {
                               <p className={styles["single-comment-text"]}>
                                 {comment.text}
                             </p>
+
+                            <div>
+                                
+                            </div>
                             {comment.hide ? (
                                 <p
                                     className={
@@ -119,7 +123,7 @@ const Comment = (props) => {
                     );
                 })
             ) : (
-                <p>No comments yet</p>
+                <p className={styles['no-comments-text']} >No comments yet</p>
             )}
         </ul>
     );

@@ -44,7 +44,7 @@ const Create = () => {
     const onSubmit = (e) => {
         e.preventDefault();
         quoteService.createQuote({ text, author });
-        navigate("/");
+        navigate("/catalog");
 
         console.log(text + " " + author);
     };

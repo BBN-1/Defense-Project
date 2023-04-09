@@ -1,9 +1,16 @@
 .profile-form-container {
+    margin: 70px auto;
     padding-top: 45px;
     padding-left: 30px;
     padding-right: 30px;
-    background-color: #121212;
-    margin: 0 auto;
+    background-image: linear-gradient(
+        to left top,
+        #2a5a7c,
+        #6460a0,
+        #b7559e,
+        #f44e6f,
+        #fe761e
+    );
     width: 500px;
     height: 550px;
     border: 1px solid #c9c9c9;
@@ -27,15 +34,14 @@
     text-align: center;
     font-size: 33px;
     font-weight: 700;
-    color: #c9c9c9;
+    color: var(--text-color);
     display: flex;
     justify-content: center;
-    
 }
 
 .profile-para {
     font-size: 18px;
-    color: #c9c9c99f;
+    color: var(--text-color);
 }
 
 .profile-card {
@@ -43,7 +49,7 @@
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    color: #c9c9c9;
+    color: var(--text-color);
 }
 
 .profile-card-username,
@@ -51,44 +57,47 @@
     line-height: normal;
 }
 
+.profile-card-username {
+    font-size: 22px;
+    font-weight: 500;
+    color: var(--text-color);
+}
+
 .profile-card-email {
     line-height: 33px;
 }
 .profile-card-username-container,
 .profile-card-email-container {
+    width: 250px;
     display: flex;
     gap: 10px;
-    flex-basis: 100%;
+    
     align-self: center;
-    justify-content: center;
+    justify-content: flex-start;
 }
 
 .username-icon,
 .email-icon,
 .profile-icon-links {
-    color: #f40137;
+    color: var(--homepage-quote-color);
     font-size: 22px;
 }
 
 .profile-bottom-wrapper {
-    /* display: flex;
-    flex-wrap: wrap; */
-    /* padding-top: 15px; */
     height: 200px;
     width: 250px;
 }
 
 .profile-card-link {
     text-decoration: none;
-    color: #c9c9c9;
+    color: var(--text-color);
     display: block;
     padding-bottom: 10px;
-    background-color: #121212;
+
     flex-basis: 100%;
     align-self: center;
 }
 
 .profile-icon-links {
-    
     padding-right: 10px;
 }

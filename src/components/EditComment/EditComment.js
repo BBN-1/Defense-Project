@@ -3,11 +3,13 @@ import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import * as commentService from "../../services/commentService";
 import { useNavigate } from "react-router-dom";
+import Spinner from "../Spinner/Spinner";
 
 const EditComment = () => {
     const [commentText, setCommentText] = useState("");
     const [comment, setComment] = useState({});
     const [anonymous, setAnonymous] = useState(false);
+    const [isLoading, setIsLoading] = useState(true);
     
 
     const { commentId } = useParams();
@@ -21,6 +23,7 @@ const EditComment = () => {
 
             setComment(currentComment);
             setCommentText(currentComment.text);
+            setAnonymous(setIsLoading(false));
         })();
     }, [commentId]);
 
@@ -52,7 +55,8 @@ const EditComment = () => {
 
     return (
         <div className={styles["details-comment-form-container"]}>
-            <form
+
+            {(isLoading && <Spinner />) || (         <form
                 onSubmit={onSubmit}
                 onKeyDown={enterKey}
                 className={styles["comment-form"]}
@@ -87,7 +91,8 @@ const EditComment = () => {
                 <button type="submit" className={styles["comment-btn"]}>
                     Send comment!
                 </button>
-            </form>
+            </form>)}
+    
         </div>
     );
 };

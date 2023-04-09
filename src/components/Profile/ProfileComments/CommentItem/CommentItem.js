@@ -17,12 +17,14 @@ const CommentItem = ({ comment }) => {
 
     return (
         <div className={styles["quote-card"]}>
-            <p className={styles["quote-text"]}>
-                “{comment.text}” commented on -{" "}
-                <Link to={`/catalog/${quote._id}`}>
-                    {quote.text?.substring(0, 22)}
-                </Link>
-            </p>
+            <p className={styles["quote-text"]}>“{comment.text}”</p>
+            <p className={styles["commentedOn-text"]}>commented on -</p>
+            <Link
+                className={styles["comment-link"]}
+                to={`/catalog/${quote._id}`}
+            >
+                {` ${quote.text?.substring(0, 22)} ...`}
+            </Link>
         </div>
     );
 };

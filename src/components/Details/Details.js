@@ -10,6 +10,7 @@ import * as commentService from "../../services/commentService";
 import { useNavigate } from "react-router-dom";
 import { authContext } from "../../contexts/authContext";
 import { useContext } from "react";
+import Spinner from "../Spinner/Spinner";
 
 import Modal from "../Modal/Modal";
 
@@ -24,11 +25,13 @@ const Details = () => {
     const [comments, setComments] = useState([]);
     const [anonymous, setAnonymous] = useState(false);
     const [isOpen, setIsOpen] = useState(false);
+    const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
         (async () => {
             const quote = await quoteService.getOne(quoteId);
             setQuote(quote);
+            setIsLoading(false);
 
             const commentsForQuote = await commentService.getByQuoteId(quoteId);
             setComments(commentsForQuote);
@@ -60,7 +63,6 @@ const Details = () => {
 
     const onCloseOrClickOutside = () => {
         setIsOpen(false);
-       
     };
 
     const onSubmit = async (e) => {
@@ -81,10 +83,14 @@ const Details = () => {
 
     return (
         <div className={styles["quote-container"]}>
-            <div className={styles["text-container"]}>
-                <p className={styles["quote-text"]}>“{quote.text}”</p>
-                <span className={styles["quote-author"]}>-{quote.author}</span>
-            </div>
+            {(isLoading && <Spinner />) || (
+                <div className={styles["text-container"]}>
+                    <p className={styles["quote-text"]}>“{quote.text}”</p>
+                    <span className={styles["quote-author"]}>
+                        -{quote.author}
+                    </span>
+                </div>
+            )}
 
             {isOwner && (
                 <div className={styles["details-buttons-container"]}>
@@ -97,7 +103,11 @@ const Details = () => {
                         Delete!
                     </button>
 
-                    <Modal open={isOpen} onClose={onCloseOrClickOutside} outerLayerClick={onCloseOrClickOutside}>
+                    <Modal
+                        open={isOpen}
+                        onClose={onCloseOrClickOutside}
+                        outerLayerClick={onCloseOrClickOutside}
+                    >
                         <p>Are you sure you want to delete this quote?</p>
                         <button onClick={deleteQuote}>Yes</button>
                     </Modal>
@@ -150,7 +160,6 @@ const Details = () => {
                     </form>
                 </div>
             )}
-           
 
             <div className={styles["details-comments-container"]}>
                 <div

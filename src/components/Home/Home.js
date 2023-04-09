@@ -1,19 +1,20 @@
 import styles from "./Home.module.css";
 import RandomQuote from "./RandomQuote/RandomQuote";
-import mountains_hero from "../../images/mountains_hero.png";
+import Spinner from "../Spinner/Spinner";
 import html2canvas from "html2canvas";
 
 import * as quoteService from "../../services/quoteService";
 import { useEffect, useState, useRef } from "react";
 
 const Home = () => {
-    const heroImg = mountains_hero;
     const [randomQuote, setRandomQuote] = useState({});
+    const [isLoading, setIsLoading] = useState(true);
     const printRef = useRef();
 
     useEffect(() => {
         quoteService.getRandomeQuote().then((res) => {
             setRandomQuote(res);
+            setIsLoading(false);
         });
     }, []);
 
@@ -43,12 +44,19 @@ const Home = () => {
 
     return (
         <div ref={printRef} className={styles["home-container"]}>
-            <section  className={styles["home-card-container"]}>
-                <RandomQuote
-                    quote={randomQuote}
-                    setRandomQuote={OnRandomClick}
-                    onSaveHandler={onSaveHandler}
-                />
+            <section className={styles["home-card-container"]}>
+                {(isLoading && <Spinner />) ||
+                    (randomQuote.text && (
+                        <RandomQuote
+                            quote={randomQuote}
+                            setRandomQuote={OnRandomClick}
+                            onSaveHandler={onSaveHandler}
+                        />
+                    )) || (
+                        <p className={styles["no-quotes"]}>
+                            Not a single quote has been posted!
+                        </p>
+                    )}
             </section>
         </div>
     );
