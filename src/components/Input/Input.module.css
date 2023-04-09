@@ -1,0 +1,18 @@
+.input-container {
+color: aqua;
+}
+
+.error-msg {
+    
+    width: 0px;
+    flex-basis: 100%;
+    color: var(--homepage-quote-color);
+    font-size: 19px;
+   
+    display: none;
+    
+}
+
+input:invalid ~ .error-msg {
+   display: block;
+}

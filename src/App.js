@@ -3,6 +3,7 @@ import { AuthProvider } from "./contexts/authContext";
 
 import Home from "./components/Home/Home";
 import Header from "./components/Header/Header";
+import Footer from "./components/Footer/Footer";
 import Login from "./components/Login/Login";
 import Register from "./components/Register/Register";
 import Profile from "./components/Profile/Profile";
@@ -49,6 +50,7 @@ function App() {
 
                     <Route path="*" element={<NotFound />} />
                 </Routes>
+                <Footer/>
             </div>
         </AuthProvider>
     );

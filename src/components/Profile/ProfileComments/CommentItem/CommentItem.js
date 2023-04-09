@@ -23,7 +23,7 @@ const CommentItem = ({ comment }) => {
                 className={styles["comment-link"]}
                 to={`/catalog/${quote._id}`}
             >
-                {` ${quote.text?.substring(0, 22)} ...`}
+                {`${quote.text?.substring(0, 22)} ...`}
             </Link>
         </div>
     );

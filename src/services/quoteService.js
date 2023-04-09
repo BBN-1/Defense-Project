@@ -22,12 +22,11 @@ export const getOne = async (id) => {
 };
 
 export const getByAuthorName = async (authorName) => {
-    
     const search = encodeURIComponent(`author="${authorName}"`);
     const quotes = await request.get(`${baseUrl}?where=${search}`);
 
     return quotes;
-}
+};
 
 export const createQuote = async (quote) => {
     const quoteReq = await request.post(baseUrl, quote);
@@ -44,19 +43,18 @@ export const editQuote = async (id, quote) => {
 export const deleteQuote = async (id) => {
     const res = await request.del(`${baseUrl}/${id}`);
     return res;
-}
+};
 
 export const getAllQuotesByAuthor = async (ownerId) => {
     const search = encodeURIComponent(`_ownerId="${ownerId}"`);
     const quotes = await request.get(`${baseUrl}?where=${search}`);
 
     return quotes;
-}
+};
 
 export const getRandomeQuote = async () => {
     const all = await request.get(baseUrl);
     const randomQuote = all[Math.floor(Math.random() * all.length)];
 
     return randomQuote;
-}
-
+};

@@ -12,6 +12,7 @@ import { useContext } from "react";
 import { authContext } from "../../contexts/authContext";
 import * as authService from "../../services/authService";
 import { useNavigate } from "react-router-dom";
+import Input from "../Input/Input";
 
 const userIcon = <FontAwesomeIcon icon={faUser} />;
 const emailIcon = <FontAwesomeIcon icon={faAt} />;
@@ -19,10 +20,12 @@ const passwordIcon = <FontAwesomeIcon icon={faLock} />;
 const confirmPassIcon = <FontAwesomeIcon icon={faUnlockKeyhole} />;
 
 const Register = () => {
-    const [username, setUsername] = useState("");
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
-    const [passConfirm, setPassConfirm] = useState("");
+    const [values, setValues] = useState({
+        username: "",
+        email: "",
+        password: "",
+        passConfirm: "",
+    });
 
     const { userLogin } = useContext(authContext);
     const navigate = useNavigate();
@@ -30,8 +33,17 @@ const Register = () => {
     const onSubmit = async (e) => {
         e.preventDefault();
 
+        if (values.password !== values.passConfirm) {
+            alert("Password and confirm password must match!");
+            return;
+        }
+
         try {
-            const res = await authService.register(email, password, username);
+            const res = await authService.register(
+                values.email,
+                values.password,
+                values.username
+            );
             console.log(res);
             userLogin(res);
             navigate("/");
@@ -40,21 +52,12 @@ const Register = () => {
         }
     };
 
-    const handleUsername = (e) => {
-        setUsername(e.target.value);
+    const onChangeHandler = (e) => {
+        setValues({ ...values, [e.target.name]: e.target.value });
     };
 
-    const handleEmail = (e) => {
-        setEmail(e.target.value);
-    };
-
-    const handlePassword = (e) => {
-        setPassword(e.target.value);
-    };
-
-    const handlePassConfirm = (e) => {
-        setPassConfirm(e.target.value);
-    };
+    console.log(values.password);
+    console.log(values.passConfirm);
 
     return (
         <section className={styles["register-form-container"]}>
@@ -69,25 +72,36 @@ const Register = () => {
                 <section className={styles["input-upper-section"]}>
                     <div className={styles["register-username-container"]}>
                         <i className={styles["username-icon"]}>{userIcon}</i>
-                        <input
-                            type="username"
-                            id="username"
-                            name="username"
-                            placeholder="Username"
-                            value={username}
-                            onChange={handleUsername}
+                        <Input
+                            value={values["username"]}
+                            onChange={onChangeHandler}
+                            name={"username"}
+                            placeholder={"Username"}
+                            type={"username"}
+                            setStyles={"error-msg"}
+                            errorMsg={
+                                "Username must be between 3 and 12 characters long and can contain only letters, numbers and underscore!"
+                            }
+                            required={true}
+                            pattern={"^[a-zA-Z0-9_]{3,12}$"}
                         />
                     </div>
 
                     <div className={styles["register-email-container"]}>
                         <i className={styles["username-icon"]}>{emailIcon}</i>
-                        <input
-                            type="email"
-                            id="email"
-                            name="email"
-                            placeholder="Email"
-                            value={email}
-                            onChange={handleEmail}
+
+                        <Input
+                            value={values["email"]}
+                            onChange={onChangeHandler}
+                            name={"email"}
+                            placeholder={"Yourmail@here.com"}
+                            type={"email"}
+                            setStyles={"error-msg"}
+                            errorMsg={"Email must be valid!"}
+                            required={true}
+                            pattern={
+                                "^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$"
+                            }
                         />
                     </div>
                 </section>
@@ -97,13 +111,18 @@ const Register = () => {
                         <i className={styles["username-icon"]}>
                             {passwordIcon}
                         </i>
-                        <input
-                            type="password"
-                            id="password"
-                            placeholder="Password"
-                            name="password"
-                            value={password}
-                            onChange={handlePassword}
+                        <Input
+                            value={values["password"]}
+                            onChange={onChangeHandler}
+                            name={"password"}
+                            placeholder={"Password"}
+                            type={"text"}
+                            setStyles={"error-msg"}
+                            errorMsg={
+                                "The password must contain at least 6 characters!"
+                            }
+                            required={true}
+                            pattern={"^.{6,}$"}
                         />
                     </div>
 
@@ -111,13 +130,18 @@ const Register = () => {
                         <i className={styles["username-icon"]}>
                             {confirmPassIcon}
                         </i>
-                        <input
-                            type="password"
-                            id="passconfirm"
-                            placeholder="Repeat your password"
-                            name="passconfirm"
-                            value={passConfirm}
-                            onChange={handlePassConfirm}
+                        <Input
+                            value={values["Passconfirm"]}
+                            onChange={onChangeHandler}
+                            name={"passConfirm"}
+                            placeholder={"Repeat your password"}
+                            type={"text"}
+                            setStyles={"error-msg"}
+                            errorMsg={
+                                "Password and confirm password must match!"
+                            }
+                            required={true}
+                            pattern={values.password}
                         />
                     </div>
                 </section>
@@ -129,7 +153,7 @@ const Register = () => {
 
             <div className={styles["register-notlogged-container"]}>
                 <p>
-                    Already have account? <Link to="/login">Login here</Link>
+                    Already have an account? <Link to="/login">Login here</Link>
                 </p>
             </div>
         </section>

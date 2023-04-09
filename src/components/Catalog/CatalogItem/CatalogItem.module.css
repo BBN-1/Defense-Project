@@ -14,10 +14,9 @@
     border: 1px solid #c9c9c9;
     border-radius: 7px;
     background-color: transparent;
-    
-    -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
-    -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
-    box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
     letter-spacing: 0.5px;
     font-size: 18px;
 }
@@ -31,6 +30,7 @@
 }
 
 .quote-card:hover a {
+    
     color: #121212;
 }
 
@@ -47,16 +47,19 @@
     flex-basis: 100%;
 }
 
-.quote-author a {
+.quote-author a{
     color: var(--text-color);
     align-self: flex-start;
     text-decoration: none;
     text-align: center;
 }
 
-.quote-author a:hover {
-    color: var(--highlight-red-color);
+.quote-author a:hover{
+    color: var(--highlight-red-color) ;
     align-self: flex-start;
+    
+
+
 }
 
 .quote-text {

@@ -3,7 +3,7 @@
     margin: 70px auto;
     background-color: #121212;
     width: 70%;
-    height: 550px;
+    height: 650px;
     border: 1px solid #c9c9c9;
     border-radius: 13px;
     background-image: linear-gradient(to left top, #2a5a7c, #6460a0, #b7559e, #f44e6f, #fe761e);
@@ -53,6 +53,16 @@
     justify-content: center;
     flex-basis: 100%;
 }
+
+.register-username-container,
+ .register-email-container,
+ .register-password-container,
+ .register-passconfirm-container{
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
 
 .register-form input {
     font-size: larger;
@@ -134,3 +144,4 @@
     color: var(--homepage-quote-color);
     transition: all 1.3s cubic-bezier(0.19, 1, 0.22, 1);
 }
+

@@ -26,6 +26,7 @@ const Details = () => {
     const [anonymous, setAnonymous] = useState(false);
     const [isOpen, setIsOpen] = useState(false);
     const [isLoading, setIsLoading] = useState(true);
+    const [isCommentLoading, setIsCommentLoading] = useState(true);
 
     useEffect(() => {
         (async () => {
@@ -35,6 +36,8 @@ const Details = () => {
 
             const commentsForQuote = await commentService.getByQuoteId(quoteId);
             setComments(commentsForQuote);
+            setIsCommentLoading(false);
+
         })();
     }, [quoteId]);
 
@@ -81,7 +84,41 @@ const Details = () => {
         }
     };
 
+    const buttonsShow = () => {
+      if(!isOwner) {
+        return null;
+      } else {
+        return (
+            <div className={styles["details-buttons-container"]}>
+            <Link to={`/quote/edit/${quote._id}`}>
+                <i className={styles.icon}>{pencil}</i>
+                Edit
+            </Link>
+            <button onClick={onDelete}>
+                <i className={styles.icon}>{danger}</i>
+                Delete!
+            </button>
+    
+            <Modal
+                open={isOpen}
+                onClose={onCloseOrClickOutside}
+                outerLayerClick={onCloseOrClickOutside}
+            >
+                <p>Are you sure you want to delete this quote?</p>
+                <button onClick={deleteQuote}>Yes</button>
+            </Modal>
+        </div>
+        )
+      }
+
+          
+        
+
+    };
+
     return (
+
+        
         <div className={styles["quote-container"]}>
             {(isLoading && <Spinner />) || (
                 <div className={styles["text-container"]}>
@@ -92,27 +129,8 @@ const Details = () => {
                 </div>
             )}
 
-            {isOwner && (
-                <div className={styles["details-buttons-container"]}>
-                    <Link to={`/quote/edit/${quote._id}`}>
-                        <i className={styles.icon}>{pencil}</i>
-                        Edit
-                    </Link>
-                    <button onClick={onDelete}>
-                        <i className={styles.icon}>{danger}</i>
-                        Delete!
-                    </button>
+            {buttonsShow()}
 
-                    <Modal
-                        open={isOpen}
-                        onClose={onCloseOrClickOutside}
-                        outerLayerClick={onCloseOrClickOutside}
-                    >
-                        <p>Are you sure you want to delete this quote?</p>
-                        <button onClick={deleteQuote}>Yes</button>
-                    </Modal>
-                </div>
-            )}
 
             {user.accessToken && (
                 <div className={styles["details-comment-form-container"]}>
@@ -161,22 +179,26 @@ const Details = () => {
                 </div>
             )}
 
-            <div className={styles["details-comments-container"]}>
-                <div
-                    className={
-                        styles["details-comments-container-inside-wrapper"]
-                    }
-                >
-                    <h1 className={styles["comments-wrapper-title"]}>
-                        comments by members
-                    </h1>
-                    <Comment
-                        comments={comments}
-                        setComments={setComments}
-                        owner={quote._ownerId}
-                    />
-                </div>
-            </div>
+            {(isCommentLoading && <Spinner />) || (
+                           <div className={styles["details-comments-container"]}>
+                           <div
+                               className={
+                                   styles["details-comments-container-inside-wrapper"]
+                               }
+                           >
+                               <h1 className={styles["comments-wrapper-title"]}>
+                                   comments by members
+                               </h1>
+                               <Comment
+                                   comments={comments}
+                                   setComments={setComments}
+                                   owner={quote._ownerId}
+                               />
+                           </div>
+                       </div>
+            )}
+
+ 
         </div>
     );
 };
