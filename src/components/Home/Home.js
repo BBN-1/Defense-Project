@@ -18,6 +18,8 @@ const Home = () => {
         });
     }, []);
 
+
+
     const OnRandomClick = () => {
         quoteService.getRandomeQuote().then((res) => {
             setRandomQuote(res);

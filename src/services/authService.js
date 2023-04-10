@@ -18,7 +18,7 @@ export const logout = async (accessToken) => {
             },
         });
 
-        console.log(req);
+        
         return req;
     } catch (error) {
         console.log(error);

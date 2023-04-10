@@ -35,6 +35,10 @@
     cursor: pointer;
 }
 
+.main-links-box li:last-child {
+    margin-left: 10px;
+}
+
 .main-links-box li a {
     text-decoration: none !important;
 }
