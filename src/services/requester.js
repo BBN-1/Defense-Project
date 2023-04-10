@@ -12,7 +12,7 @@ const request = async (method, url, data) => {
 
         let headers = {};
 
-        if(auth.accessToken) {
+        if(auth && auth.accessToken) {
             headers["X-Authorization"] = auth.accessToken
         }
 
