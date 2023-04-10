@@ -5,13 +5,14 @@ import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import * as quoteService from "../../services/quoteService";
 import { useNavigate } from "react-router-dom";
+import Input from "../Input/Input";
 
 const pencil = <FontAwesomeIcon icon={faPencil} />;
 const astrounat = <FontAwesomeIcon icon={faUserAstronaut} />;
 
 const Edit = () => {
     const { quoteId } = useParams();
-    console.log(quoteId);
+
     const [text, setText] = useState("");
     const [author, setAuthor] = useState("");
     const navigate = useNavigate();
@@ -25,9 +26,14 @@ const Edit = () => {
 
     const textHandler = (e) => {
         setText(e.target.value);
+        if (text.length > 350) {
+            alert("Quote text must be less than 350 characters!");
+            setText(text.substring(0, 350));
+            return;
+        }
     };
 
-    const authorHandler = (e) => {
+    const onChangeHandler = (e) => {
         setAuthor(e.target.value);
     };
 
@@ -49,7 +55,7 @@ const Edit = () => {
 
             <form onSubmit={onSubmit} className={styles["edit-form"]}>
                 <div className={styles["edit-quote-container"]}>
-                    <i className={styles["username-icon"]}>{pencil}</i>
+                    <i className={styles["text-icon"]}>{pencil}</i>
                     <textarea
                         className={styles["quote-input"]}
                         type="text"
@@ -61,13 +67,19 @@ const Edit = () => {
                 </div>
 
                 <div className={styles["edit-author-container"]}>
-                    <i className={styles["username-icon"]}>{astrounat}</i>
-                    <input
-                        type="author"
-                        id="author"
-                        onChange={authorHandler}
+                    <i className={styles["author-icon"]}>{astrounat}</i>
+                    <Input
                         value={author}
-                        name="author"
+                        onChange={onChangeHandler}
+                        name={"author"}
+                        placeholder={"Quote's author"}
+                        type={"author"}
+                        setStyles={"error-msg"}
+                        errorMsg={
+                            "Author's name must be in the format: 'John Doe' or 'John'!"
+                        }
+                        required={true}
+                        pattern={"^[a-zA-Z]+(\\s[a-zA-Z]+)?$"}
                     />
                 </div>
 

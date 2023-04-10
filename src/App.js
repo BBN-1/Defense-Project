@@ -25,8 +25,8 @@ function App() {
         <AuthProvider>
             <div className="App">
                 <Header />
-
-                <Routes>
+            <div className="main-content"> 
+            <Routes>
                     <Route path="/" element={<Home />} />
                     <Route element={<PrivateGuard />}>
                         <Route path="/create" element={<Create />} />
@@ -50,6 +50,8 @@ function App() {
 
                     <Route path="*" element={<NotFound />} />
                 </Routes>
+            </div>
+   
                 <Footer/>
             </div>
         </AuthProvider>

@@ -6,9 +6,8 @@ import Search from "../Search/Search";
 import styles from "./Header.module.css";
 import main_logo_transparent from "../../images/logo_header.png";
 
-
 const Header = () => {
-        const { user } = useContext(authContext);
+    const { user } = useContext(authContext);
 
     const setHeaderLinks = ({ isActive }) => {
         return isActive ? styles["active-link"] : styles["non-active-link"];
@@ -27,14 +26,11 @@ const Header = () => {
                 <ol role="list" className={styles["main-links-box"]}>
                     <li>
                         <NavLink to="/catalog" className={setHeaderLinks}>
-                            GET{" "}
-                            <span className={styles["red-exclamation-point"]}>
-                                MOTIVATED!
-                            </span>
+                            GET MOTIVATED!
                         </NavLink>
                     </li>
 
-                    {user.accessToken ?
+                    {user.accessToken ? (
                         <>
                             <li>
                                 <NavLink
@@ -49,10 +45,12 @@ const Header = () => {
                                     to="/profile"
                                     className={setHeaderLinks}
                                 >
-                                    {user.username?.toUpperCase() || "DEFAULT USER"}
+                                    Welcome,{" "}
+                                    {user.username?.toUpperCase() ||
+                                        "DEFAULT USER"}
                                 </NavLink>
                             </li>
-                            <li >
+                            <li>
                                 <NavLink
                                     to="/logout"
                                     className={setHeaderLinks}
@@ -61,7 +59,7 @@ const Header = () => {
                                 </NavLink>
                             </li>
                         </>
-                        :
+                    ) : (
                         <>
                             <li>
                                 <NavLink to="/login" className={setHeaderLinks}>
@@ -78,13 +76,11 @@ const Header = () => {
                                 </NavLink>
                             </li>
                         </>
-                    }
+                    )}
 
-                    <li className={styles['header-searchBtn']}>
-                     <Search />
+                    <li className={styles["header-searchBtn"]}>
+                        <Search />
                     </li>
-
-
                 </ol>
             </nav>
         </header>

@@ -6,7 +6,7 @@
     padding-bottom: 20px;
     background-image: linear-gradient(to left top, #2a5a7c, #6460a0, #b7559e, #f44e6f, #fe761e);
     width: 500px;
-    height: 550px;
+    height: 650px;
     border: 1px solid #c9c9c9;
     border-radius: 13px;
     box-shadow: 0 0 1px #c9c9c9, 0 0 5px #c9c9c9, 0 0 5px #f40137,
@@ -54,9 +54,21 @@
     flex-basis: 100%;
 }
 
+.edit-author-container {
+    display: flex;
+    flex-wrap: wrap;
+   
+}
+
 .edit-quote-container {
     height: 200px;
 }
+
+.edit-author-container input {
+    margin: 0 auto;
+}
+
+
 
 .edit-form input,
 .edit-form textarea {
@@ -97,13 +109,19 @@
     opacity: 1;
 }
 
-.username-icon {
+.text-icon,
+.author-icon {
     position: absolute;
     color: var(--text-color);
     font-size: 22px;
     padding-right: 10px;
     padding-left: 10px;
 }
+
+.author-icon {
+    padding-left: 64px;
+}
+
 
 .edit-btn {
     align-self: flex-end;

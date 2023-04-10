@@ -93,6 +93,7 @@ const Comment = (props) => {
                                         open={isOpen}
                                         onClose={() => setIsOpen(false)}
                                         outerLayerClick={onCloseOrClickOutside}
+                                        style={"login-error-modal"}
                                     >
                                         <p>
                                             Are you sure you want to delete this

@@ -46,6 +46,7 @@
 }
 
 .details-comments-btn-container {
+    display: flex;
     padding-top: 20px;
     padding-left: 450px;
 }

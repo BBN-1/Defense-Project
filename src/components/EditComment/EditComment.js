@@ -10,7 +10,6 @@ const EditComment = () => {
     const [comment, setComment] = useState({});
     const [anonymous, setAnonymous] = useState(false);
     const [isLoading, setIsLoading] = useState(true);
-    
 
     const { commentId } = useParams();
     const navigate = useNavigate();
@@ -33,6 +32,13 @@ const EditComment = () => {
 
     const commentHandler = (e) => {
         setCommentText(e.target.value);
+        
+
+        if (e.target.value.length > 200) {
+            alert("Comment must be less than 200 characters!");
+            setCommentText(e.target.value.substring(0, 200));
+            return;
+        }
     };
 
     const enterKey = (e) => {
@@ -55,44 +61,47 @@ const EditComment = () => {
 
     return (
         <div className={styles["details-comment-form-container"]}>
-
-            {(isLoading && <Spinner />) || (         <form
-                onSubmit={onSubmit}
-                onKeyDown={enterKey}
-                className={styles["comment-form"]}
-            >
-                <label className={styles["comment-label"]} htmlFor="comment">
-                    Edit your comment!
-                </label>
-                <textarea
-                    className={styles["comment-textarea"]}
-                    name="comment"
-                    id=""
-                    cols="30"
-                    rows="10"
-                    onChange={commentHandler}
-                    value={commentText}
-                ></textarea>
-                <div className={styles["anonymous-container"]}>
-                    <fieldset>
-                        <div>
-                            <input
-                                type="checkbox"
-                                id="anonymous"
-                                name="anonymous"
-                                unchecked="true"
-                                value={anonymous}
-                                onChange={anonymousHandler}
-                            />
-                            <label htmlFor="scales">Hide username!</label>
-                        </div>
-                    </fieldset>
-                </div>
-                <button type="submit" className={styles["comment-btn"]}>
-                    Send comment!
-                </button>
-            </form>)}
-    
+            {(isLoading && <Spinner />) || (
+                <form
+                    onSubmit={onSubmit}
+                    onKeyDown={enterKey}
+                    className={styles["comment-form"]}
+                >
+                    <label
+                        className={styles["comment-label"]}
+                        htmlFor="comment"
+                    >
+                        Edit your comment!
+                    </label>
+                    <textarea
+                        className={styles["comment-textarea"]}
+                        name="comment"
+                        id=""
+                        cols="30"
+                        rows="10"
+                        onChange={commentHandler}
+                        value={commentText}
+                    ></textarea>
+                    <div className={styles["anonymous-container"]}>
+                        <fieldset>
+                            <div>
+                                <input
+                                    type="checkbox"
+                                    id="anonymous"
+                                    name="anonymous"
+                                    unchecked="true"
+                                    value={anonymous}
+                                    onChange={anonymousHandler}
+                                />
+                                <label htmlFor="scales">Hide username!</label>
+                            </div>
+                        </fieldset>
+                    </div>
+                    <button type="submit" className={styles["comment-btn"]}>
+                        Send comment!
+                    </button>
+                </form>
+            )}
         </div>
     );
 };

@@ -41,6 +41,8 @@ const Details = () => {
         })();
     }, [quoteId]);
 
+    console.log("re-render");
+
     const navigate = useNavigate();
 
     const { user } = useContext(authContext);
@@ -48,6 +50,14 @@ const Details = () => {
 
     const commentHandler = (e) => {
         setComment(e.target.value);
+
+        if (e.target.value.length > 200) {
+            alert("Comment must be less than 200 characters!");
+            setComment(e.target.value.substring(0, 200));
+            return;
+        }
+
+
     };
 
     const anonymousHandler = (e) => {
@@ -61,7 +71,7 @@ const Details = () => {
 
     const deleteQuote = async () => {
         await quoteService.deleteQuote(quoteId);
-        navigate("/", { replace: true });
+        navigate("/catalog", { replace: true });
     };
 
     const onCloseOrClickOutside = () => {
@@ -103,6 +113,7 @@ const Details = () => {
                 open={isOpen}
                 onClose={onCloseOrClickOutside}
                 outerLayerClick={onCloseOrClickOutside}
+                style={"login-error-modal"}
             >
                 <p>Are you sure you want to delete this quote?</p>
                 <button onClick={deleteQuote}>Yes</button>

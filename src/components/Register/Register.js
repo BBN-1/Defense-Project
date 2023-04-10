@@ -116,7 +116,7 @@ const Register = () => {
                             onChange={onChangeHandler}
                             name={"password"}
                             placeholder={"Password"}
-                            type={"text"}
+                            type={"password"}
                             setStyles={"error-msg"}
                             errorMsg={
                                 "The password must contain at least 6 characters!"
@@ -135,13 +135,14 @@ const Register = () => {
                             onChange={onChangeHandler}
                             name={"passConfirm"}
                             placeholder={"Repeat your password"}
-                            type={"text"}
+                            type={"password"}
                             setStyles={"error-msg"}
                             errorMsg={
-                                "Password and confirm password must match!"
+                                "Passwords must match!"
                             }
                             required={true}
                             pattern={values.password}
+                            
                         />
                     </div>
                 </section>

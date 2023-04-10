@@ -4,6 +4,7 @@ import { faPencil, faUserAstronaut } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
 import * as quoteService from "../../services/quoteService";
 import { useNavigate } from "react-router-dom";
+import Input from "../Input/Input";
 
 const pencil = <FontAwesomeIcon icon={faPencil} />;
 const astrounat = <FontAwesomeIcon icon={faUserAstronaut} />;
@@ -11,42 +12,37 @@ const astrounat = <FontAwesomeIcon icon={faUserAstronaut} />;
 const Create = () => {
     const [text, setText] = useState("");
     const [author, setAuthor] = useState("");
-    const [error, setError] = useState({
-        text: "",
-        author: "",
-    });
 
     const navigate = useNavigate();
 
     const textHandler = (e) => {
         setText(e.target.value);
+
+        if (text.length > 350) {
+            alert(
+                "Quote text must be at least 10 characters and less than 350!"
+            );
+            setText(text.substring(0, 350));
+            return;
+        }
     };
 
-    const authorHandler = (e) => {
+    const onChangeHandler = (e) => {
         setAuthor(e.target.value);
-    };
-
-    const validateText = (e) => {
-        const text = e.target.value;
-        let errorMsg = "";
-
-        if (text.trim().length < 5) {
-            errorMsg = "msg must be longer than 5 symbols";
-        } else if (text.trim().length > 15)
-            errorMsg = "msg must be shorter than 10 symbols";
-
-        setError((state) => ({
-            ...state,
-            text: errorMsg,
-        }));
     };
 
     const onSubmit = (e) => {
         e.preventDefault();
+
+        if (text.length < 10) {
+            alert(
+                "Quote text must be less than 350 characters and more than 10!"
+            );
+            return;
+        }
+
         quoteService.createQuote({ text, author });
         navigate("/catalog");
-
-        console.log(text + " " + author);
     };
 
     return (
@@ -65,26 +61,31 @@ const Create = () => {
                         className={styles["quote-input"]}
                         type="text"
                         id="text"
-                        onBlur={validateText}
                         onChange={textHandler}
                         value={text}
                         name="quote"
                         placeholder="Quote text"
+                        pattern="^.{10,350}$"
+                        required={true}
                     />
                 </div>
 
                 <div className={styles["create-author-container"]}>
                     <i className={styles["author-icon"]}>{astrounat}</i>
-                    <input
-                        type="author"
-                        id="author"
-                        onChange={authorHandler}
+                    <Input
                         value={author}
-                        placeholder="Quote author"
-                        name="author"
+                        onChange={onChangeHandler}
+                        name={"author"}
+                        placeholder={"Quote's author"}
+                        type={"author"}
+                        setStyles={"error-msg"}
+                        errorMsg={
+                            "Author's name must be in the format: 'John Doe' or 'John'!"
+                        }
+                        required={true}
+                        pattern={"^[a-zA-Z]+(\\s[a-zA-Z]+)?$"}
                     />
                 </div>
-                {error && <p> {error.text}</p>}
 
                 <button type="submit" className={styles["create-btn"]}>
                     CREATE!

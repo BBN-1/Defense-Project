@@ -2,18 +2,20 @@ import React from "react";
 import styles from "./Modal.module.css";
 import ReactDom from "react-dom";
 
-const Modal = ({ open, children, onClose, outerLayerClick}) => {
+const Modal = ({ open, children, onClose, outerLayerClick, style}) => {
     if (!open) return null;
+console.log(style);
 
+    
     return ReactDom.createPortal(
         <>
             <div
                 onClick={outerLayerClick}
                 className={styles["modal-container-overlay"]}
             />
-            <div className={styles["modal-container"]}>
+            <div className={styles[`${style}`]}>
                 {children}
-                <button onClick={onClose}>close</button>
+                <button onClick={onClose}>Close</button>
             </div>
         </>,
         document.getElementById("portal")

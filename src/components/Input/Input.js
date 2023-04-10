@@ -1,4 +1,5 @@
 import styles from "./Input.module.css";
+import { useState } from "react";
 
 const Input = ({
     value,
@@ -11,12 +12,15 @@ const Input = ({
     required,
     pattern,
 }) => {
+    const [focused, setFocused] = useState(false);
     const isRequired = required;
+    const handleOnBlur = (e) => {
+        setFocused(true);
+    };
 
     return (
         <>
             <input
-                
                 type={type}
                 name={name}
                 value={value}
@@ -24,6 +28,9 @@ const Input = ({
                 placeholder={placeholder}
                 required={isRequired}
                 pattern={pattern}
+                onBlur={handleOnBlur}
+                focused={focused.toString()}
+                onFocus={() => name === "passConfirm" && setFocused(true)}
             />
             <span className={styles[`${setStyles}`]}>{errorMsg}</span>
         </>

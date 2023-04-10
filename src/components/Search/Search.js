@@ -4,12 +4,16 @@ import * as quoteService from "../../services/quoteService";
 import { Link } from "react-router-dom";
 import styles from "./Search.module.css";
 import Modal from "../Modal/Modal";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faMagnifyingGlass} from "@fortawesome/free-solid-svg-icons";
+
+const serchIcon = <FontAwesomeIcon icon={faMagnifyingGlass} />;
 
 const Search = () => {
     const [search, setSearch] = useState("");
     const [allQuotes, setAllQuotes] = useState([]);
     const [searchResults, setSearchResults] = useState([]);
-    const [searchResultsLoading, setSearchResultsLoading] = useState(false);
+    
     const [isOpen, setIsOpen] = useState(false);
 
     const isOpenHandler = async () => {
@@ -26,6 +30,7 @@ const Search = () => {
 
     const handleSearch = (e) => {
         setSearch(e.target.value);
+       
 
         setSearchResults(
             allQuotes.filter(
@@ -36,6 +41,8 @@ const Search = () => {
                     e.target.value.toLowerCase().length >= 1
             )
         );
+        
+
     };
 
     return (
@@ -46,32 +53,34 @@ const Search = () => {
                 open={isOpen}
                 onClose={onCloseOrClickOutside}
                 outerLayerClick={onCloseOrClickOutside}
+                style={"search-modal"}
             >
-                <div className="search">
+                <div >
+                    <span>
+                    <i>{serchIcon}</i>
                     <input
                         type="text"
                         placeholder="Search by author"
                         value={search}
                         onChange={handleSearch}
                     />
-                    <div className="search-results">
-                        {searchResultsLoading ? (
-                            <div className="search-results-loading">
-                                <Spinner />
-                            </div>
-                        ) : (
-                            searchResults.map((result) => (
+                    </span>
+                    
+             
+                    <div className={styles['search-results-container']}>
+                    
+                            {searchResults.map((result) => (
                                 <Link
                                     key={result._id}
                                     onClick={onCloseOrClickOutside}
                                     to={`/author/${result.author}`}
                                     className={styles["search-result-link"]}
                                 >
-                                    Author - {result.author} - said..{" "}
-                                    {result.text.slice(0, 20)}
+                                   <p className={styles['search-author-name']}> {result.author}</p><p className={styles['search-author-quote']} >-  said ...{" "}
+                                    {result.text.slice(0, 20)}</p>
                                 </Link>
-                            ))
-                        )}
+                            ))}
+                        
                     </div>
                 </div>
             </Modal>

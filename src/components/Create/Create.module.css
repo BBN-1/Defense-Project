@@ -55,6 +55,21 @@
     flex-basis: 100%;
 }
 
+.create-author-container {
+    display: flex;
+    flex-wrap: wrap;
+
+   
+}
+
+.create-author-container input {
+ 
+    margin: 0 auto;
+}
+
+
+
+
 .create-quote-container {
     height: 200px;
 }
@@ -103,6 +118,10 @@
     font-size: 22px;
     padding-right: 10px;
     padding-left: 10px;
+}
+
+.author-icon {
+    padding-left: 64px;
 }
 
 .create-btn {

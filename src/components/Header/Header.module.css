@@ -48,14 +48,14 @@
 }
 
 .red-exclamation-point {
-    color: #f40137;
+    color: var(--homepage-quote-color);
 }
 
 .active-link {
     border: 1px solid transparent;
     padding-left: 10px;
     padding-right: 10px;
-    color: #f40137;
+    color: var(--homepage-quote-color);
     letter-spacing: 1.2px;
     font-weight: bold;
     cursor: pointer;
