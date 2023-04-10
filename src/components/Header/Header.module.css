@@ -4,6 +4,9 @@
     padding-bottom: 5px;
     padding-left: 40px;
     padding-right: 40px;
+    -webkit-box-shadow: 10px 10px 13px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 10px 10px 13px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: 10px 10px 13px 0px rgba(0, 0, 0, 0.75);
 }
 
 .logo-link {
@@ -71,5 +74,5 @@
     letter-spacing: 1.2px;
     font-weight: bold;
     cursor: pointer;
+    text-shadow: 4px 2px 3px #000000;
 }
-

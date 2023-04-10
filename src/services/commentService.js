@@ -40,3 +40,9 @@ export const getAllCommentsByUser = async (ownerId) => {
 
     return comments;
 }
+
+export const getAllComments = async () => {
+    const comments = await request.get(baseUrl);
+
+    return comments;
+}

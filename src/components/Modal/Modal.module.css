@@ -88,7 +88,7 @@
     flex-wrap: wrap;
     gap: 20px;
     justify-content: center;
-    width: 500px;
+    width: 550px;
     height: 650px;
     border: 1px solid #ff0202;
     border-radius: 13px;
@@ -112,6 +112,16 @@
     z-index: 1000;
     overflow: auto;
     
+}
+
+.search-modal div {
+    
+    width: 500px;
+    height: 450px;
+    padding-bottom: 15px;
+    padding-right: 15px;
+    
+ 
 }
 
 

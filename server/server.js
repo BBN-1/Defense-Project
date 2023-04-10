@@ -1363,14 +1363,86 @@
             }
         },
         comments: {
-        
+          
+            "9e34aedd-2d1e-4cff-b1c8-d0d61237bd040":
+            {
+                "_ownerId": "35c62d76-8152-4626-8712-eeb96381bea8",
+                "quoteId": "ff436770-76c5-40e2-b231-77409897a61",
+                "text": "This is a great quote!",
+                "_createdOn": 1681156814271,
+                "_updatedOn": 1681156877295,
+            },
+            "9e34aedd-2d1e-4cff-b1c8-d0d6098740":
+            {
+                "_ownerId": "35c62d76-8152-4626-8712-eeb96381bea8",
+                "quoteId": "ff436770-76c5-40e2-b231-77409897a61",
+                "text": "I was thinking the same thing!",
+                "_createdOn": 1681156814271,
+                "_updatedOn": 1681156877295,
+            },
+            "9e3653edd-2d1e-4cff-b1c8-d0d6097bd040":
+            {
+                "_ownerId": "35c62d76-8152-4626-8712-eeb96381bea8",
+                "quoteId": "ff436770-76c5-40e2-b231-77409897a61",
+                "text": "If only there was a way to share these thoughts with the rest of the world...",
+                "_createdOn": 1681156814271,
+                "_updatedOn": 1681156877295,
+            },
+            "9e34aedd-2d1e-4cff-b1c8-d34e097bd040":
+            {
+                "_ownerId": "35c62d76-8152-4626-8712-eeb96381bea8",
+                "quoteId": "ff436770-76c5-40e2-b231-77409897a61",
+                "text": "How about we start a website where people can share quotes?",
+                "_createdOn": 1681156814271,
+                "_updatedOn": 1681156877295,
+            },
+            "9e3rfvdd-2d1e-4cff-b1c8-d0d6097bd040":
+            {
+                "_ownerId": "35c62d76-8152-4626-8712-eeb96381bea8",
+                "quoteId": "ff436770-76c5-40e2-b231-77409897a61",
+                "text": "Must be teh best idea ever!",
+                "_createdOn": 1681156814271,
+                "_updatedOn": 1681156877295,
+            },
+            "9e34aedd-2d1e-4cff-b1c8-d0d60khfbd040":
+            {
+                "_ownerId": "35c62d76-8152-4626-8712-eeb96381bea8",
+                "quoteId": "ff436770-76c5-40e2-b231-77409897a61",
+                "text": "Why don't we call it Quotebook?",
+                "_createdOn": 1681156814271,
+                "_updatedOn": 1681156877295,
+            },
+            "9e34rtdd-2d1e-4cff-b1c8-d0rfd97bd040":
+            {
+                "_ownerId": "35c62d76-8152-4626-8712-eeb96381bea8",
+                "quoteId": "ff436770-76c5-40e2-b231-77409897a61",
+                "text": "When I was a kid, I used to read encyclopedias for fun. Now my kids think I'm crazy.",
+                "_createdOn": 1681156814271,
+                "_updatedOn": 1681156877295,
+            },
+            "9e34a7dd-2d1e-4cff-b1c8-d0d6fvg7bd040":
+            {
+                "_ownerId": "35c62d76-8152-4626-8712-eeb96381bea8",
+                "quoteId": "ff436770-76c5-40e2-b231-77409897a61",
+                "text": "I cant say I agree with that",
+                "_createdOn": 1681156814271,
+               "_updatedOn": 1681156877295,
+            },
+            "9e3345dd-2d1e-4cff-b1c8-d0d60sdgsd040":
+            {
+                "_ownerId": "35c62d76-8152-4626-8712-eeb96381bea8",
+                "quoteId": "ff436770-76c5-40e2-b231-77409897a61",
+                "text": "Is it me or is it getting crazier out there?",
+                "_createdOn": 1681156814271,
+                "_updatedOn": 1681156877295,
+            },
         },
 
         quotes: {
             "ff436770-76c5-40e2-b231-77409897a61": {
                 "_ownerId": "35c62d76-8152-4626-8712-eeb96381bea8",
                 "text": "Reality doesn't impress me. I only believe in intoxication, in ecstasy, and when ordinary life shackles me, I escape, one way or another. No more walls.",
-                "author": "Anaïs Nin",
+                "author": "Anais Nin",
                 "_createdOn": 1617194128618,
             },
             "1840a313-225c-416a-817a-99558689f7c": {

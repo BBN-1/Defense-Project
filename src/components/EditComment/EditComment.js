@@ -4,12 +4,15 @@ import { useState, useEffect } from "react";
 import * as commentService from "../../services/commentService";
 import { useNavigate } from "react-router-dom";
 import Spinner from "../Spinner/Spinner";
+import Modal from "../Modal/Modal";
+import { Navigate } from "react-router-dom";
 
 const EditComment = () => {
     const [commentText, setCommentText] = useState("");
     const [comment, setComment] = useState({});
     const [anonymous, setAnonymous] = useState(false);
     const [isLoading, setIsLoading] = useState(true);
+    const [isOpen, setIsOpen] = useState(false);
 
     const { commentId } = useParams();
     const navigate = useNavigate();
@@ -22,9 +25,13 @@ const EditComment = () => {
 
             setComment(currentComment);
             setCommentText(currentComment.text);
-            setAnonymous(setIsLoading(false));
+
+            setIsLoading(false);
         })();
     }, [commentId]);
+
+    console.log(comment);
+    console.log(commentId);
 
     const anonymousHandler = (e) => {
         setAnonymous(e.target.checked);
@@ -32,7 +39,6 @@ const EditComment = () => {
 
     const commentHandler = (e) => {
         setCommentText(e.target.value);
-        
 
         if (e.target.value.length > 200) {
             alert("Comment must be less than 200 characters!");
@@ -48,10 +54,25 @@ const EditComment = () => {
         }
     };
 
-    const onSubmit = (e) => {
+    const OnDeleteHandler = async (event) => {
+        const result = window.confirm(
+            "are you sure you want to delete this comment?"
+        );
+
+        if (result === false) {
+            event.preventDefault();
+            <Navigate to={`/comment/edit/${comment._id}`} />;
+        } else {
+            await commentService.deleteComment(commentId);
+
+            navigate(`/catalog/${comment.quoteId}`);
+        }
+    };
+
+    const onSubmit = async (e) => {
         e.preventDefault();
 
-        commentService.editComment(commentId, {
+        await commentService.editComment(commentId, {
             ...comment,
             hide: anonymous,
             text: commentText,
@@ -100,6 +121,8 @@ const EditComment = () => {
                     <button type="submit" className={styles["comment-btn"]}>
                         Send comment!
                     </button>
+
+                    <button className={styles["delete-btn"]} onClick={OnDeleteHandler}>delete</button>
                 </form>
             )}
         </div>

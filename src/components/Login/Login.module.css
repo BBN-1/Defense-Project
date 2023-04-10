@@ -71,11 +71,11 @@
     height: 35px;
     line-height: 30px;
     text-indent: 40px;
-    background-color: transparent;
+    
     width: 350px;
     border: 1px solid #c9c9c9;
     border-radius: 7px;
-    background-color: transparent;
+    background: rgba(225,225,225,0.2);
     box-shadow: 0 0 1px #c9c9c9, 0 0 5px #c9c9c9, 0 0 5px #f4013662,
         0 0 1px #f4013662, 0 0 10px #f4013662, inset 0 0 15px #f4013662;
 }
