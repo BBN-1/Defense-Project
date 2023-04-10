@@ -1363,19 +1363,14 @@
             }
         },
         comments: {
-            "1840a313-225c-416a-817a-99558689f7c": {
-                "_ownerId": "35c62d76-8152-4626-8712-eeb96381bea8",
-              "text": "Hold fast to dreams,For if dreams dieLife is a broken-winged bird, That cannot fly.",
-              "author": "Langston Hughes",              
-                "_createdOn": 1617194210928,
-            }
+        
         },
 
         quotes: {
             "ff436770-76c5-40e2-b231-77409897a61": {
                 "_ownerId": "35c62d76-8152-4626-8712-eeb96381bea8",
                 "text": "Reality doesn't impress me. I only believe in intoxication, in ecstasy, and when ordinary life shackles me, I escape, one way or another. No more walls.",
-                "author": "Anais Nin",
+                "author": "Anaïs Nin",
                 "_createdOn": 1617194128618,
             },
             "1840a313-225c-416a-817a-99558689f7c": {
