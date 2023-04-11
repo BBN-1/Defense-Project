@@ -19,7 +19,7 @@ const ProfileComments = () => {
         })();
     }, [user._id]);
 
-    console.log(allCommentsByUser);
+    
 
     return (
         <div className={styles["catalog-container"]}>

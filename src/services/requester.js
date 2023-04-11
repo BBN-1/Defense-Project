@@ -2,22 +2,22 @@ const request = async (method, url, data) => {
     try {
         let buildRequest;
 
-        let authData = localStorage.getItem('auth');
+        let authData = localStorage.getItem("auth");
+
         let auth;
 
-        if(authData) {
-            auth = JSON.parse(authData)
+        if (authData) {
+            auth = JSON.parse(authData);
         }
-        
 
         let headers = {};
 
-        if(auth && auth.accessToken) {
-            headers["X-Authorization"] = auth.accessToken
+        if (auth && auth.accessToken) {
+            headers["X-Authorization"] = auth.accessToken;
         }
 
         if (method === "GET") {
-            buildRequest = fetch(url, {headers});
+            buildRequest = fetch(url, { headers });
         } else {
             buildRequest = fetch(url, {
                 method: method,
