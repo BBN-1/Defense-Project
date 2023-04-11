@@ -40,3 +40,5 @@ export const RandomQuote = ({ quote, setRandomQuote, onSaveHandler }) => {
 };
 
 export default RandomQuote;
+
+

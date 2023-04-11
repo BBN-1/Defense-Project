@@ -57,7 +57,10 @@ const Home = () => {
                             Not a single quote has been posted!
                         </p>
                     )}
+
             </section>
+
+
         </div>
     );
 };

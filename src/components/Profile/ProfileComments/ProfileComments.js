@@ -5,11 +5,15 @@ import { authContext } from "../../../contexts/authContext";
 import * as commentService from "../../../services/commentService";
 import CommentItem from "./CommentItem/CommentItem";
 import Spinner from "../../Spinner/Spinner";
+import Pagination from "../../Pagination/Pagination";
 
 const ProfileComments = () => {
     const [allCommentsByUser, setAllCommentsByUser] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
     const { user } = useContext(authContext);
+    const [currentPage, setCurrentPage] = useState(1);
+    const [commentsPerPage, setCommentsPerPage] = useState(5);
+
 
     useEffect(() => {
         (async () => {
@@ -19,11 +23,17 @@ const ProfileComments = () => {
         })();
     }, [user._id]);
 
+    const indexOfLastComment = currentPage * commentsPerPage;
+    const indexOfFirstComment = indexOfLastComment - commentsPerPage;
+    const currentComments = allCommentsByUser.slice(indexOfFirstComment, indexOfLastComment);
+
  
 
     
 
     return (
+
+        <>
         <div className={styles["catalog-container"]}>
             <h1 className={styles["catalog-title"]}>
                 Your Comments, {user.username || 'Default User'}!
@@ -31,7 +41,7 @@ const ProfileComments = () => {
             <section className={styles["catalog-cards-container"]}>
                 {(isLoading && <Spinner />) ||
                     (allCommentsByUser.length > 0 &&
-                        allCommentsByUser.map((comment) => (
+                        currentComments.map((comment) => (
                             <CommentItem
                                 key={comment._id}
                                 quoteId={comment.quoteId}
@@ -46,6 +56,9 @@ const ProfileComments = () => {
                     )}
             </section>
         </div>
+
+        <Pagination totalPosts={allCommentsByUser.length} postsPerPage={commentsPerPage} setCurrentPage={setCurrentPage} />
+        </>
     );
 };
 
