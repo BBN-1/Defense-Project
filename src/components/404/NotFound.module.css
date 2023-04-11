@@ -10,7 +10,7 @@
     font-size: 130px;
     text-align: left;
 
-    color: #f40137;
+    color: var(--highlight-red-color);
 
     position: absolute;
     top: 50%;

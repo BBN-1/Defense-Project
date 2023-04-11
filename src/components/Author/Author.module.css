@@ -85,7 +85,7 @@
     font-weight: bold;
     height: 45px;
     padding: 0 40px 0 40px;
-    color: #f40137;
+    color: var(--highlight-red-color);
     cursor: pointer;
     border: 1px solid #c9c9c9;
     border-radius: 7px;
@@ -99,7 +99,7 @@
     height: 45px;
     padding: 0 40px 0 40px;
 
-    color: #f40137;
+    color: var(--highlight-red-color);
     box-shadow: 0 0 1px #273b0f62, 0 0 5px #5a941862, 0 0 5px #d7e46177,
         0 0 1px #5a941862, 0 0 10px #5a941862, inset 0 0 15px #27460462;
     transition: all 1.8s cubic-bezier(0.19, 1, 0.22, 1);
