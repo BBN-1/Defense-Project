@@ -19,7 +19,7 @@ const ProfileComments = () => {
         })();
     }, [user._id]);
 
-    console.log("render");
+ 
 
     
 
@@ -34,7 +34,9 @@ const ProfileComments = () => {
                         allCommentsByUser.map((comment) => (
                             <CommentItem
                                 key={comment._id}
+                                quoteId={comment.quoteId}
                                 comment={comment}
+                                quoteSnippet={comment.quoteSnippet}
                                 user={user}
                             />
                         ))) || (

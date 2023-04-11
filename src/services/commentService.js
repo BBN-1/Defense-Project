@@ -2,8 +2,8 @@ import  * as request from "./requester";
 
 const baseUrl = "http://localhost:3030/data/comments";
 
-export const create = async (quoteId, comment, anonymous) => {
-    const res = await request.post(baseUrl, {quoteId, text:comment, hide:anonymous});
+export const create = async (quoteId, quoteSnippet,  comment, anonymous) => {
+    const res = await request.post(baseUrl, {quoteId, quoteSnippet, text:comment, hide:anonymous});
     
     
     return res;

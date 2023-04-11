@@ -1368,6 +1368,7 @@
             {
                 "_ownerId": "35c62d76-8152-4626-8712-eeb96381bea8",
                 "quoteId": "ff436770-76c5-40e2-b231-77409897a61",
+                "quoteSnippet": "Reality doesn't impress me. I only believe in",
                 "text": "This is a great quote!",
                 "_createdOn": 1681156814271,
                 "_updatedOn": 1681156877295,
@@ -1376,6 +1377,7 @@
             {
                 "_ownerId": "35c62d76-8152-4626-8712-eeb96381bea8",
                 "quoteId": "ff436770-76c5-40e2-b231-77409897a61",
+                "quoteSnippet": "Reality doesn't impress me. I only believe in",
                 "text": "I was thinking the same thing!",
                 "_createdOn": 1681156814271,
                 "_updatedOn": 1681156877295,
@@ -1384,6 +1386,7 @@
             {
                 "_ownerId": "35c62d76-8152-4626-8712-eeb96381bea8",
                 "quoteId": "ff436770-76c5-40e2-b231-77409897a61",
+                "quoteSnippet": "Reality doesn't impress me. I only believe in",
                 "text": "If only there was a way to share these thoughts with the rest of the world...",
                 "_createdOn": 1681156814271,
                 "_updatedOn": 1681156877295,
@@ -1392,6 +1395,7 @@
             {
                 "_ownerId": "35c62d76-8152-4626-8712-eeb96381bea8",
                 "quoteId": "ff436770-76c5-40e2-b231-77409897a61",
+                "quoteSnippet": "Reality doesn't impress me. I only believe in",
                 "text": "How about we start a website where people can share quotes?",
                 "_createdOn": 1681156814271,
                 "_updatedOn": 1681156877295,
@@ -1400,6 +1404,7 @@
             {
                 "_ownerId": "35c62d76-8152-4626-8712-eeb96381bea8",
                 "quoteId": "ff436770-76c5-40e2-b231-77409897a61",
+                "quoteSnippet": "Reality doesn't impress me. I only believe in",
                 "text": "Must be teh best idea ever!",
                 "_createdOn": 1681156814271,
                 "_updatedOn": 1681156877295,
@@ -1408,6 +1413,7 @@
             {
                 "_ownerId": "35c62d76-8152-4626-8712-eeb96381bea8",
                 "quoteId": "ff436770-76c5-40e2-b231-77409897a61",
+                "quoteSnippet": "Reality doesn't impress me. I only believe in",
                 "text": "Why don't we call it Quotebook?",
                 "_createdOn": 1681156814271,
                 "_updatedOn": 1681156877295,
@@ -1416,6 +1422,7 @@
             {
                 "_ownerId": "35c62d76-8152-4626-8712-eeb96381bea8",
                 "quoteId": "ff436770-76c5-40e2-b231-77409897a61",
+                "quoteSnippet": "Reality doesn't impress me. I only believe in",
                 "text": "When I was a kid, I used to read encyclopedias for fun. Now my kids think I'm crazy.",
                 "_createdOn": 1681156814271,
                 "_updatedOn": 1681156877295,
@@ -1424,6 +1431,7 @@
             {
                 "_ownerId": "35c62d76-8152-4626-8712-eeb96381bea8",
                 "quoteId": "ff436770-76c5-40e2-b231-77409897a61",
+                "quoteSnippet": "Reality doesn't impress me. I only believe in",
                 "text": "I cant say I agree with that",
                 "_createdOn": 1681156814271,
                "_updatedOn": 1681156877295,
@@ -1432,6 +1440,7 @@
             {
                 "_ownerId": "35c62d76-8152-4626-8712-eeb96381bea8",
                 "quoteId": "ff436770-76c5-40e2-b231-77409897a61",
+                "quoteSnippet": "Reality doesn't impress me. I only believe in",
                 "text": "Is it me or is it getting crazier out there?",
                 "_createdOn": 1681156814271,
                 "_updatedOn": 1681156877295,

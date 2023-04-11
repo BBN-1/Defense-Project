@@ -80,7 +80,7 @@ const Details = () => {
 
     const onSubmit = async (e) => {
         e.preventDefault();
-        await commentService.create(quoteId, comment, anonymous);
+        await commentService.create(quoteId, quote.text.substring(0,33), comment, anonymous);
 
         setComment("");
         const commentsForQuote = await commentService.getByQuoteId(quoteId);
