@@ -19,6 +19,8 @@ const ProfileComments = () => {
         })();
     }, [user._id]);
 
+    console.log("render");
+
     
 
     return (

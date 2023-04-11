@@ -18,7 +18,7 @@ const Profile = () => {
 
 
     const {user} = useContext(authContext)
-    console.log(user);
+    
 
     return (
         <section className={styles["profile-form-container"]}>

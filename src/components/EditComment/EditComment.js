@@ -12,7 +12,7 @@ const EditComment = () => {
     const [comment, setComment] = useState({});
     const [anonymous, setAnonymous] = useState(false);
     const [isLoading, setIsLoading] = useState(true);
-    const [isOpen, setIsOpen] = useState(false);
+    
 
     const { commentId } = useParams();
     const navigate = useNavigate();
@@ -30,8 +30,7 @@ const EditComment = () => {
         })();
     }, [commentId]);
 
-    console.log(comment);
-    console.log(commentId);
+  
 
     const anonymousHandler = (e) => {
         setAnonymous(e.target.checked);
@@ -71,6 +70,8 @@ const EditComment = () => {
 
     const onSubmit = async (e) => {
         e.preventDefault();
+
+
 
         await commentService.editComment(commentId, {
             ...comment,

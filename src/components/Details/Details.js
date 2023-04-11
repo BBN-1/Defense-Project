@@ -133,7 +133,7 @@ const Details = () => {
         <div className={styles["quote-container"]}>
             {(isLoading && <Spinner />) || (
                 <div className={styles["text-container"]}>
-                    <p className={styles["quote-text"]}>“{quote.text}”</p>
+                    <p className={styles["quote-text"]}>“{quote?.text || "This Quote Has Been Deleted By The User!"}”</p>
                     <span className={styles["quote-author"]}>
                         -{quote.author}
                     </span>
