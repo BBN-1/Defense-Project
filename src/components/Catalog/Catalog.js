@@ -19,6 +19,8 @@ const Catalog = () => {
         });
     }, []);
 
+    // pagination needed values
+
     const indexOfLastQuote = currentPage * quotesPerPage;
     const indexOfFirstQuote = indexOfLastQuote - quotesPerPage;
     const currentQuotes = allQuotes.slice(indexOfFirstQuote, indexOfLastQuote);

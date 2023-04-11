@@ -41,7 +41,7 @@ const Details = () => {
         })();
     }, [quoteId]);
 
-    console.log("re-render");
+   
 
     const navigate = useNavigate();
 
@@ -68,15 +68,16 @@ const Details = () => {
     const onDelete = async () => {
         setIsOpen(true);
     };
-
+    
+    const onCloseOrClickOutside = () => {
+        setIsOpen(false);
+    };
+    
     const deleteQuote = async () => {
         await quoteService.deleteQuote(quoteId);
         navigate("/catalog", { replace: true });
     };
 
-    const onCloseOrClickOutside = () => {
-        setIsOpen(false);
-    };
 
     const onSubmit = async (e) => {
         e.preventDefault();
@@ -93,6 +94,8 @@ const Details = () => {
             onSubmit(e);
         }
     };
+
+    //quote edit and delete buttons
 
     const buttonsShow = () => {
       if(!isOwner) {

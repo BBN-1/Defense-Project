@@ -22,6 +22,9 @@ const ProfilePosts = () => {
         })();
     }, [user._id]);
 
+
+    //pagination needed values
+    
     const indexOfLastQuote = currentPage * quotesPerPage;
     const indexOfFirstQuote = indexOfLastQuote - quotesPerPage;
     const currentQuotes = allQuotesByAuthor.slice(indexOfFirstQuote, indexOfLastQuote);

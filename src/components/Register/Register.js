@@ -56,8 +56,7 @@ const Register = () => {
         setValues({ ...values, [e.target.name]: e.target.value });
     };
 
-    console.log(values.password);
-    console.log(values.passConfirm);
+  
 
     return (
         <section className={styles["register-form-container"]}>

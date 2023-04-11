@@ -24,6 +24,8 @@ const Home = () => {
         });
     };
 
+    //download image logic 
+    
     const onSaveHandler = async () => {
         const element = printRef.current;
         const canvas = await html2canvas(element);

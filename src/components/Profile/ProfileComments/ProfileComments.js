@@ -23,6 +23,8 @@ const ProfileComments = () => {
         })();
     }, [user._id]);
 
+    //pagination needed values
+
     const indexOfLastComment = currentPage * commentsPerPage;
     const indexOfFirstComment = indexOfLastComment - commentsPerPage;
     const currentComments = allCommentsByUser.slice(indexOfFirstComment, indexOfLastComment);
