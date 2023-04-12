@@ -31,6 +31,15 @@ const request = async (method, url, data) => {
 
         const response = await buildRequest;
 
+        
+        
+        //handle access token expiration ( Forbidden 403 error ) on server restart
+        if (response.status === 403) {
+            localStorage.removeItem("auth");
+        }
+
+        
+
         const result = await response.json();
 
         return result;
