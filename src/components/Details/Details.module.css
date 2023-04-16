@@ -180,9 +180,19 @@
     color: #c9c9c99f;
 }
 .comment-label {
-    font-size: large;
+    padding-top: 4px;
+    font-size: 26px;
     font-weight: bold;
+    color: var(--header-background-color);
+    
     height: 50px;
+    border-radius: 7px;
+    
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+
+
 }
 
 .comment-btn {
@@ -242,7 +252,7 @@
 }
 
 .comments-wrapper-title {
-    color: var(--text-color);
+    color: var(--header-background-color);
     font-size: large;
 }
 

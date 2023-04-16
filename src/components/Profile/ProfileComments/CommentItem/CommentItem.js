@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const CommentItem = ({ comment, quoteId, quoteSnippet }) => {
     const quotePage = `/catalog/${quoteId}`;
 
-    console.log("render");
+    
 
     return (
         <div className={styles["quote-card"]}>

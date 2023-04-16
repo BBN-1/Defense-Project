@@ -32,7 +32,7 @@ const Input = ({
                 focused={focused.toString()}
                 onFocus={() => name === "passConfirm" && setFocused(true)}
             />
-            <span className={styles[`${setStyles}`]}>{errorMsg}</span>
+            <span data-cy="error-msg" className={styles[`${setStyles}`]}>{errorMsg}</span>
         </>
     );
 };

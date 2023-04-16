@@ -107,7 +107,7 @@ const Login = () => {
                         />
                     </div>
 
-                    <button type="submit" className={styles["login-btn"]}>
+                    <button data-cy="submit" type="submit" className={styles["login-btn"]}>
                         LOGIN
                     </button>
                 </form>

@@ -69,7 +69,7 @@ const Register = () => {
 
             <form onSubmit={onSubmit} className={styles["register-form"]}>
                 <section className={styles["input-upper-section"]}>
-                    <div className={styles["register-username-container"]}>
+                    <div data-cy="username-container" className={styles["register-username-container"]}>
                         <i className={styles["username-icon"]}>{userIcon}</i>
                         <Input
                             value={values["username"]}
@@ -86,7 +86,7 @@ const Register = () => {
                         />
                     </div>
 
-                    <div className={styles["register-email-container"]}>
+                    <div data-cy="email-container" className={styles["register-email-container"]}>
                         <i className={styles["username-icon"]}>{emailIcon}</i>
 
                         <Input
@@ -99,14 +99,14 @@ const Register = () => {
                             errorMsg={"Email must be valid!"}
                             required={true}
                             pattern={
-                                "^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$"
+                                "^\\w+([\\.-]?\\w+)*@\\w+([\\.-]?\\w+)*(\\.\\w{2,3})+$"
                             }
                         />
                     </div>
                 </section>
 
                 <section className={styles["input-lower-section"]}>
-                    <div className={styles["register-password-container"]}>
+                    <div data-cy="password-container" className={styles["register-password-container"]}>
                         <i className={styles["username-icon"]}>
                             {passwordIcon}
                         </i>
@@ -118,14 +118,14 @@ const Register = () => {
                             type={"password"}
                             setStyles={"error-msg"}
                             errorMsg={
-                                "The password must contain at least 6 characters!"
+                                "The password must be between 6 and 12 characters long!"
                             }
                             required={true}
-                            pattern={"^.{6,}$"}
+                            pattern={"^.{6,12}$"}
                         />
                     </div>
 
-                    <div className={styles["register-passconfirm-container"]}>
+                    <div data-cy="passConfirm-container" className={styles["register-passconfirm-container"]}>
                         <i className={styles["username-icon"]}>
                             {confirmPassIcon}
                         </i>
@@ -146,7 +146,7 @@ const Register = () => {
                     </div>
                 </section>
 
-                <button type="submit" className={styles["register-btn"]}>
+                <button data-cy="submit" type="submit" className={styles["register-btn"]}>
                     REGISTER
                 </button>
             </form>

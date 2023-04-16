@@ -22,6 +22,8 @@ const ProfilePosts = () => {
         })();
     }, [user._id]);
 
+    
+
 
     //pagination needed values
     

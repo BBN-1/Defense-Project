@@ -6,12 +6,14 @@ const request = async (method, url, data) => {
 
         let auth;
 
+        //parse auth data from local storage
         if (authData) {
             auth = JSON.parse(authData);
         }
 
         let headers = {};
 
+        //add access token to headers if user is logged in
         if (auth && auth.accessToken) {
             headers["X-Authorization"] = auth.accessToken;
         }
