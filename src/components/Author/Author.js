@@ -14,6 +14,7 @@ const Author = () => {
     const { authorId } = useParams();
     console.log(authorId);
 
+    
     useEffect(() => {
         ( async () => {
         const res = await quoteService.getByAuthorName(authorId);
