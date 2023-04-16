@@ -75,7 +75,7 @@ const Register = () => {
                 outerLayerClick={onOuterLayerClickHandler}
                 style={"login-error-modal"}
             >
-                <p>User with this email already exists!</p>
+                <p>User with this {values.email} email already exists!</p>
             </Modal>
             <section className={styles["register-form-container"]}>
                 <div className={styles["register-cta-container"]}>

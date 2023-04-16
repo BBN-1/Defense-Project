@@ -80,6 +80,21 @@ describe("Register Page", () => {
           cy.contains( "Passwords must match!").should("be.visible");
           cy.contains( "The password must be between 6 and 12 characters long!").should("be.visible");
 
+          //check error message on submit with email already in use 
+
+            cy.get("[data-cy=username-container] > input").clear()
+            cy.get("[data-cy=username-container] > input").type("peter");
+            cy.get("[data-cy=email-container] > input").clear()
+            cy.get("[data-cy=email-container] > input").type("peter@abv.bg")
+            cy.get("[data-cy=password-container] > input").clear()
+            cy.get("[data-cy=password-container] > input").type("123456");
+            cy.get("[data-cy=passConfirm-container] > input").clear()
+            cy.get("[data-cy=passConfirm-container] > input").type("123456");
+            cy.get("[data-cy=submit]").click();
+            cy.contains("User with this peter@abv.bg email already exists!").should("be.visible");
+            cy.url().should("eq", "http://localhost:3000/register");
+
+
 
 
 
