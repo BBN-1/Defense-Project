@@ -56,9 +56,10 @@ const Create = () => {
             </div>
 
             <form onSubmit={onSubmit} className={styles["create-form"]}>
-                <div className={styles["create-quote-container"]}>
+                <div data-cy="quote-container" className={styles["create-quote-container"]}>
                     <i className={styles["text-icon"]}>{pencil}</i>
                     <textarea
+                        data-cy="quote-input"
                         className={styles["quote-input"]}
                         type="text"
                         id="text"
@@ -71,9 +72,10 @@ const Create = () => {
                     />
                 </div>
 
-                <div className={styles["create-author-container"]}>
+                <div data-cy="author-container" className={styles["create-author-container"]}>
                     <i className={styles["author-icon"]}>{astrounat}</i>
                     <Input
+                        
                         value={author}
                         onChange={onChangeHandler}
                         name={"author"}
@@ -88,7 +90,7 @@ const Create = () => {
                     />
                 </div>
 
-                <button type="submit" className={styles["create-btn"]}>
+                <button data-cy="submit" type="submit" className={styles["create-btn"]}>
                     CREATE!
                 </button>
             </form>

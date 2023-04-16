@@ -14,7 +14,7 @@ const Catalog = () => {
 
     useEffect(() => {
         quoteService.getAll().then((res) => {
-            setAllQuotes(res);
+            setAllQuotes(res.reverse());
             setIsLoading(false);
         });
     }, []);

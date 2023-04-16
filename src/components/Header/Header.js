@@ -34,6 +34,7 @@ const Header = () => {
                         <>
                             <li>
                                 <NavLink
+                                    data-cy="create"
                                     to="/create"
                                     className={setHeaderLinks}
                                 >
@@ -42,6 +43,7 @@ const Header = () => {
                             </li>
                             <li>
                                 <NavLink
+                                    data-cy="profile"
                                     to="/profile"
                                     className={setHeaderLinks}
                                 >
@@ -52,6 +54,7 @@ const Header = () => {
                             </li>
                             <li>
                                 <NavLink
+                                    data-cy="logout"
                                     to="/logout"
                                     className={setHeaderLinks}
                                 >

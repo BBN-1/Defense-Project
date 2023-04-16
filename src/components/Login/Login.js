@@ -73,7 +73,7 @@ const Login = () => {
                 </div>
 
                 <form className={styles["login-form"]} onSubmit={onSubmit}>
-                    <div className={styles["login-email-container"]}>
+                    <div  data-cy="email-container" className={styles["login-email-container"]}>
                         <i className={styles["login-icons"]}>{emailIcon}</i>
                         <Input
                             value={values["email"]}
@@ -90,7 +90,7 @@ const Login = () => {
                         />
                     </div>
 
-                    <div className={styles["login-password-container"]}>
+                    <div data-cy="password-container"  className={styles["login-password-container"]}>
                         <i className={styles["login-icons"]}>{passwordIcon}</i>
                         <Input
                             value={values["password"]}
@@ -100,10 +100,10 @@ const Login = () => {
                             type={"password"}
                             setStyles={"error-msg"}
                             errorMsg={
-                                "The password must contain at least 6 characters!"
+                                "The password must be between 6 and 12 characters long!"
                             }
                             required={true}
-                            pattern={"^.{6,}$"}
+                            pattern={"^.{6,12}$"}
                         />
                     </div>
 
