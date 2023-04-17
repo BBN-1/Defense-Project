@@ -24,6 +24,7 @@ const Comment = (props) => {
                 commentsArray?.map((comment) => {
                     return (
                         <li
+                            data-cy="comment"
                             className={
                                 styles["details-comments-single-comment"]
                             }
@@ -33,7 +34,7 @@ const Comment = (props) => {
                                 {comment.text}
                             </p>
 
-                            <div></div>
+                            
                             {comment.hide ? (
                                 <p
                                     className={
@@ -55,6 +56,8 @@ const Comment = (props) => {
                                     }
                                 >
                                     <Link
+
+                                        data-cy="edit-comment"
                                         className={
                                             styles[
                                                 "details-comments-container-editLink"

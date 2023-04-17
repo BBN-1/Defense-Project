@@ -160,6 +160,7 @@ const Details = () => {
                             Leave a comment
                         </label>
                         <textarea
+                            data-cy="comment-textarea"
                             className={styles["comment-textarea"]}
                             name="comment"
                             id=""
@@ -173,6 +174,7 @@ const Details = () => {
                             <fieldset>
                                 <div>
                                     <input
+                                        data-cy="anonymous-checkbox"
                                         type="checkbox"
                                         id="anonymous"
                                         name="anonymous"
@@ -186,7 +188,7 @@ const Details = () => {
                                 </div>
                             </fieldset>
                         </div>
-                        <button type="submit" className={styles["comment-btn"]}>
+                        <button data-cy="comment-submit-btn" type="submit" className={styles["comment-btn"]}>
                             Send comment!
                         </button>
                     </form>

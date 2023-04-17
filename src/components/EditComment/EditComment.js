@@ -96,6 +96,7 @@ const EditComment = () => {
                         Edit your comment!
                     </label>
                     <textarea
+                        data-cy="comment-textarea"
                         className={styles["comment-textarea"]}
                         name="comment"
                         id=""
@@ -108,6 +109,7 @@ const EditComment = () => {
                         <fieldset>
                             <div>
                                 <input
+                                    data-cy="anonymous-checkbox"
                                     type="checkbox"
                                     id="anonymous"
                                     name="anonymous"
@@ -119,7 +121,7 @@ const EditComment = () => {
                             </div>
                         </fieldset>
                     </div>
-                    <button type="submit" className={styles["comment-btn"]}>
+                    <button data-cy="send-comment" type="submit" className={styles["comment-btn"]}>
                         Send comment!
                     </button>
 
