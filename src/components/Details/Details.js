@@ -103,7 +103,7 @@ const Details = () => {
       } else {
         return (
             <div className={styles["details-buttons-container"]}>
-            <Link to={`/quote/edit/${quote._id}`}>
+            <Link data-cy="edit-link" to={`/quote/edit/${quote._id}`}>
                 <i className={styles.icon}>{pencil}</i>
                 Edit
             </Link>

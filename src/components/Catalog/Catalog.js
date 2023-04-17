@@ -31,7 +31,7 @@ const Catalog = () => {
             <div className={styles["catalog-contianer"]}>
                 <h1 className={styles["catalog-title"]}>All Quotes</h1>
 
-                <section className={styles["catalog-cards-container"]}>
+                <section data-cy="quote-list" className={styles["catalog-cards-container"]}>
                     {(isLoading && <Spinner />) ||
                         (allQuotes.length > 0 &&
                             currentQuotes.map((quote) => (

@@ -9,6 +9,7 @@ const CatalogItem = ({ quote }) => {
             <div className={styles["quote-bottom-wrapper"]}>
                 <span className={styles["quote-author"]}>- <Link to={`/author/${quote.author}`} >{quote.author}</Link></span>
                 <Link
+                    data-cy="details"
                     className={styles["quote-details-link"]}
                     to={`/catalog/${quote._id}`}
                 >

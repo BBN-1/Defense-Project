@@ -26,11 +26,14 @@ const Edit = () => {
 
     const textHandler = (e) => {
         setText(e.target.value);
+
         if (text.length > 350) {
             alert("Quote text must be less than 350 characters!");
             setText(text.substring(0, 350));
             return;
         }
+
+      
     };
 
     const onChangeHandler = (e) => {
@@ -39,6 +42,16 @@ const Edit = () => {
 
     const onSubmit = (e) => {
         e.preventDefault();
+
+        if (text.length < 10) {
+            alert("Quote text must be at least 10 characters!");
+            return;
+        }
+
+        if (text.length > 350) {
+            alert("Quote text must be less than 350 characters!");
+            return;
+        }
 
         quoteService.editQuote(quoteId, { text, author });
         navigate(`/catalog/${quoteId}`);
@@ -57,16 +70,18 @@ const Edit = () => {
                 <div className={styles["edit-quote-container"]}>
                     <i className={styles["text-icon"]}>{pencil}</i>
                     <textarea
+                        data-cy="quote-input"
                         className={styles["quote-input"]}
                         type="text"
                         id="text"
                         onChange={textHandler}
                         value={text}
                         name="quote"
+                        pattern="^.{10,350}$"
                     />
                 </div>
 
-                <div className={styles["edit-author-container"]}>
+                <div  className={styles["edit-author-container"]}>
                     <i className={styles["author-icon"]}>{astrounat}</i>
                     <Input
                         value={author}
@@ -83,7 +98,7 @@ const Edit = () => {
                     />
                 </div>
 
-                <button type="submit" className={styles["edit-btn"]}>
+                <button data-cy="edit-btn" type="submit" className={styles["edit-btn"]}>
                     EDIT QUOTE
                 </button>
             </form>

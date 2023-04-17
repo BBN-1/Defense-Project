@@ -18,15 +18,8 @@ const Create = () => {
     const textHandler = (e) => {
         setText(e.target.value);
 
-        if (text.length > 350) {
-            alert(
-                "Quote text must be at least 10 characters and less than 350!"
-            );
-            setText(text.substring(0, 350));
-            return;
-        }
+ 
     };
-    
 
     const onChangeHandler = (e) => {
         setAuthor(e.target.value);
@@ -37,8 +30,13 @@ const Create = () => {
 
         if (text.length < 10) {
             alert(
-                "Quote text must be less than 350 characters and more than 10!"
+                "Quote text must be at least 10 characters and less than 350!"
             );
+            return;
+        }
+
+        if (text.length > 350) {
+            alert("Quote text must be less than 350 characters!");
             return;
         }
 
@@ -56,7 +54,10 @@ const Create = () => {
             </div>
 
             <form onSubmit={onSubmit} className={styles["create-form"]}>
-                <div data-cy="quote-container" className={styles["create-quote-container"]}>
+                <div
+                    data-cy="quote-container"
+                    className={styles["create-quote-container"]}
+                >
                     <i className={styles["text-icon"]}>{pencil}</i>
                     <textarea
                         data-cy="quote-input"
@@ -72,10 +73,12 @@ const Create = () => {
                     />
                 </div>
 
-                <div data-cy="author-container" className={styles["create-author-container"]}>
+                <div
+                    data-cy="author-container"
+                    className={styles["create-author-container"]}
+                >
                     <i className={styles["author-icon"]}>{astrounat}</i>
                     <Input
-                        
                         value={author}
                         onChange={onChangeHandler}
                         name={"author"}
@@ -90,7 +93,11 @@ const Create = () => {
                     />
                 </div>
 
-                <button data-cy="submit" type="submit" className={styles["create-btn"]}>
+                <button
+                    data-cy="submit"
+                    type="submit"
+                    className={styles["create-btn"]}
+                >
                     CREATE!
                 </button>
             </form>
