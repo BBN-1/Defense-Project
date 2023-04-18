@@ -25,57 +25,32 @@ describe("Edit Quote Page Happy Path", () => {
 
         //then we go to navigate to quote details page by clicking on the detail button and check if the quote is there and the edit button is visible
 
-        cy.get(':nth-child(1) > .CatalogItem_quote-bottom-wrapper__N1hh2 > [data-cy="details"]').click();
-        cy.url().should('contain', 'catalog')
+        cy.get(
+            ':nth-child(1) > .CatalogItem_quote-bottom-wrapper__N1hh2 > [data-cy="details"]'
+        ).click();
+        cy.url().should("contain", "catalog");
         cy.contains("this better works 2666").should("be.visible");
         cy.contains("author").should("be.visible");
         cy.contains("Edit").should("be.visible");
 
         //then we click on the edit button and check if the edit page is loaded and the right quote is there
 
-        cy.get('[data-cy="edit-link"]').click()
-        cy.url().should('contain', 'edit', 'quote')
+        cy.get('[data-cy="edit-link"]').click();
+        cy.url().should("contain", "edit", "quote");
         cy.contains("this better works 2666").should("be.visible");
-        cy.get('input').should('have.value', 'author')
+        cy.get("input").should("have.value", "author");
 
-        //then we edit the quote take the quoteId from url and submit the form 
+        //then we edit the quote take the quoteId from url and submit the form
 
-        cy.get('[data-cy="quote-input"]').clear()
-        cy.get('[data-cy="quote-input"]').type('edit is successful')
-        const quoteId = cy.url().then(url => url.split('/')[3])
-        cy.get('[data-cy="edit-btn"]').click()
+        cy.get('[data-cy="quote-input"]').clear();
+        cy.get('[data-cy="quote-input"]').type("edit is successful");
+        const quoteId = cy.url().then((url) => url.split("/")[3]);
+        cy.get('[data-cy="edit-btn"]').click();
 
         //then we check if we are correctly redirected to the quote details page and the quote is edited
 
-        cy.url().should('contain', 'catalog', quoteId)
+        cy.url().should("contain", "catalog", quoteId);
         cy.contains("edit is successful").should("be.visible");
         cy.contains("author").should("be.visible");
-
-
-       
-
-
-        
-
-
-
-
-
-
-
-
-
-
-
-           
-
-      
-    
-
-        
-        
-     
-
-
     });
 });

@@ -1,7 +1,15 @@
 describe("Comment Page Happy Path", () => {
+
+    beforeEach(() => {
+        cy.visit("http://localhost:3000/login");
+        
+
+       
+    })
+
     it("should successfully create new comment with displayed username", () => {
         //first we login the user
-        cy.visit("http://localhost:3000/login");
+      
 
         cy.get("[data-cy=email-container] > input").clear();
         cy.get("[data-cy=email-container] > input").type("peter@abv.bg");
@@ -52,7 +60,7 @@ describe("Comment Page Happy Path", () => {
 
     it("should successfully create new comment with hidden username", () => {
         //first we login the user
-        cy.visit("http://localhost:3000/login");
+       
 
         cy.get("[data-cy=email-container] > input").clear();
         cy.get("[data-cy=email-container] > input").type("peter@abv.bg");

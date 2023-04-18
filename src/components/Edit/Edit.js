@@ -70,6 +70,7 @@ const Edit = () => {
                 <div className={styles["edit-quote-container"]}>
                     <i className={styles["text-icon"]}>{pencil}</i>
                     <textarea
+                    
                         data-cy="quote-input"
                         className={styles["quote-input"]}
                         type="text"

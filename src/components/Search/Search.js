@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Spinner from "../Spinner/Spinner";
+
 import * as quoteService from "../../services/quoteService";
 import { Link } from "react-router-dom";
 import styles from "./Search.module.css";
@@ -47,7 +47,7 @@ const Search = () => {
 
     return (
         <>
-            <button className={styles['header-searchBtn']} onClick={isOpenHandler}>Search</button>
+            <button data-cy="search-button" className={styles['header-searchBtn']} onClick={isOpenHandler}>Search</button>
 
             <Modal
                 open={isOpen}
@@ -59,6 +59,7 @@ const Search = () => {
                     <span>
                     <i>{serchIcon}</i>
                     <input
+                        data-cy="search-input"
                         type="text"
                         placeholder="Search by author"
                         value={search}
@@ -67,7 +68,7 @@ const Search = () => {
                     </span>
                     
              
-                    <div className={styles['search-results-container']}>
+                    <div data-cy="search-container" className={styles['search-results-container']}>
                     
                             {searchResults.map((result) => (
                                 <Link
@@ -76,7 +77,7 @@ const Search = () => {
                                     to={`/author/${result.author}`}
                                     className={styles["search-result-link"]}
                                 >
-                                   <p className={styles['search-author-name']}> {result.author}</p><p className={styles['search-author-quote']} >-  said ...{" "}
+                                   <p data-cy="search-author" className={styles['search-author-name']}> {result.author}</p><p className={styles['search-author-quote']} >-  said ...{" "}
                                     {result.text.slice(0, 20)}</p>
                                 </Link>
                             ))}

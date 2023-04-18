@@ -23,9 +23,9 @@ const Header = () => {
                         </NavLink>
                     </li>
                 </div>
-                <ol role="list" className={styles["main-links-box"]}>
+                <ol role="list" data-cy="header-links-list" className={styles["main-links-box"]}>
                     <li>
-                        <NavLink to="/catalog" className={setHeaderLinks}>
+                        <NavLink to="/catalog" data-cy="catalog" className={setHeaderLinks}>
                             GET MOTIVATED!
                         </NavLink>
                     </li>
@@ -65,7 +65,7 @@ const Header = () => {
                     ) : (
                         <>
                             <li>
-                                <NavLink to="/login" className={setHeaderLinks}>
+                                <NavLink to="/login" data-cy="login" className={setHeaderLinks}>
                                     LOGIN
                                 </NavLink>
                             </li>
@@ -73,6 +73,7 @@ const Header = () => {
                             <li>
                                 <NavLink
                                     to="/register"
+                                    data-cy="register"
                                     className={setHeaderLinks}
                                 >
                                     REGISTER
@@ -81,7 +82,7 @@ const Header = () => {
                         </>
                     )}
 
-                    <li className={styles["header-searchBtn"]}>
+                    <li data-cy="search" className={styles["header-searchBtn"]}>
                         <Search />
                     </li>
                 </ol>

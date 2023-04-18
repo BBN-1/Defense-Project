@@ -81,6 +81,18 @@ const Details = () => {
 
     const onSubmit = async (e) => {
         e.preventDefault();
+
+        if (comment.length < 10) {
+            alert("Comment must be at least 10 character long!");
+            return;
+        }
+
+        if (comment.length > 200) {
+            alert("Comment must be less than 200 characters!");
+            return;
+        }
+
+
         await commentService.create(quoteId, quote.text.substring(0,33), comment, anonymous);
 
         setComment("");

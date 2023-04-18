@@ -32,12 +32,12 @@ const Profile = () => {
             <div className={styles["profile-card"]}>
                 <div className={styles["profile-card-username-container"]}>
                     <i className={styles["username-icon"]}>{userIcon}</i>
-                    <h1 className={styles["profile-card-username"]}>{user.username || 'Default User'}</h1>
+                    <h1 data-cy="profile-username" className={styles["profile-card-username"]}>{user.username || 'Default User'}</h1>
                 </div>
 
                 <div className={styles["profile-card-email-container"]}>
                     <i className={styles["email-icon"]}>{mailIcon}</i>
-                    <p className={styles["profile-card-email"]}>
+                    <p data-cy="profile-email" className={styles["profile-card-email"]}>
                         {user.email}
                     </p>
                 </div>

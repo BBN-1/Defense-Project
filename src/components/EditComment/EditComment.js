@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import * as commentService from "../../services/commentService";
 import { useNavigate } from "react-router-dom";
 import Spinner from "../Spinner/Spinner";
-import Modal from "../Modal/Modal";
+
 import { Navigate } from "react-router-dom";
 
 const EditComment = () => {
@@ -70,6 +70,11 @@ const EditComment = () => {
 
     const onSubmit = async (e) => {
         e.preventDefault();
+
+        if (commentText.length < 10) {
+            alert("Comment must be at least 10 character!");
+            return;
+        }
 
 
 
